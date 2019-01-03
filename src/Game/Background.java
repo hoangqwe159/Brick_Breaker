@@ -1,10 +1,9 @@
-package Game;
+package game;
 
-import Game.Renderer.SingleimageRenderer;
+import game.renderer.SingleimageRenderer;
 import tklibs.SpriteUtils;
 import tklibs.Vector2D;
 
-import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.image.BufferedImage;
 
 public class Background extends GameObject {

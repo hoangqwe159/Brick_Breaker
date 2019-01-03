@@ -1,6 +1,6 @@
-package Game.Renderer;
+package game.renderer;
 
-import Game.GameObject;
+import game.GameObject;
 
 import java.awt.*;
 

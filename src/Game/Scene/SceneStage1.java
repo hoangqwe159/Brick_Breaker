@@ -1,16 +1,16 @@
-package Game.Scene;
+package game.scene;
 
-import Game.Background;
+import game.Background;
 
 
-import Game.Ball.BallType1;
-import Game.Enemy.EnemySummoner;
-import Game.GameObject;
+import game.ball.BallType1;
+import game.brick.AbilityBrickType4;
+import game.brick.BrickSummoner;
+import game.GameObject;
 
-import Game.Menu.BackgroundMenu;
-import Game.Menu.ScoreMenu;
-import Game.Player.Player;
-
+import game.menu.BackgroundMenu;
+import game.menu.ScoreMenu;
+import game.paddle.Paddle;
 
 import javax.sound.sampled.Clip;
 
@@ -18,23 +18,32 @@ import javax.sound.sampled.Clip;
 public class SceneStage1 extends Scene {
     int count = 0;
     Clip music;
-    EnemySummoner summon;
+
     @Override
     public void init() {
         GameObject.recycleGameObject(Background.class);
-        GameObject.recycleGameObject(Player.class);
+        GameObject.recycleGameObject(Paddle.class);
         GameObject.recycleGameObject(BackgroundMenu.class);
         GameObject.recycleGameObject(ScoreMenu.class);
         GameObject.recycleGameObject(BallType1.class);
+        GameObject.recycleGameObject(AbilityBrickType4.class);
+//        BrickSummoner.summonType1(100 + 80 * 1 , 100 + 40 * 1);
+//        BrickSummoner.summonType2(100 + 80 * 2 , 100 + 40 * 1);
+        //       BrickSummoner.summonType3(0 , 100 + 40 * 1);
 
 
-        int i = 0;
-        int k = 0;
-        for (i = 0; i < 8; i++) {
-            for (k = 0; k < 4; k++) {
-                this.summon = new EnemySummoner(100 + 80 * i , 100 + 40 * k);
+        for (int i = 0; i < 8; i++) {
+            for (int k = 1; k < 3; k++) {
+                BrickSummoner.summonType1(100 + 80 * i , 100 + 40 * k);
             }
+        }
 
+        for (int i = 0; i < 8; i++) {
+            BrickSummoner.summonType2(100 + 80 * i , 100 + 40 * 3);
+        }
+
+        for (int i = 0; i < 8; i++) {
+            BrickSummoner.summonType3(100 + 80 * i , 100);
         }
 
 
@@ -42,7 +51,7 @@ public class SceneStage1 extends Scene {
 
 //        this.count++;
 //        if (this.count > 100) {
-//            new EnemySummoner();
+//            new BrickSummoner();
 //            this.count = 0;
 //        }
 //        GameObject.recycleGameObject(BackgroundMenu.class);
@@ -57,7 +66,7 @@ public class SceneStage1 extends Scene {
 
     }
 
-//        EnemyType1 enemy1 =  GameObject.recycleGameObject(EnemyType1.class);
+//        BrickType1 enemy1 =  GameObject.recycleGameObject(BrickType1.class);
 //        enemy1.position.set(300, 200);
 
 

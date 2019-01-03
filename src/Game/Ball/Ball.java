@@ -1,11 +1,14 @@
-package Game.Ball;
+package game.ball;
 
-import Game.GameObject;
-import Game.Physics.BoxCollider;
-import Game.Physics.Physics;
+import game.GameObject;
+import game.physics.BoxCollider;
+import game.physics.Physics;
+import game.scene.GameOverScene;
+import game.scene.Scene;
 
 public abstract class Ball extends GameObject implements Physics {
     public BoxCollider boxCollider;
+    public int maxVelocity;
     public Ball() {
         this.createRenderer();
         this.createBoxCollider();
@@ -19,6 +22,15 @@ public abstract class Ball extends GameObject implements Physics {
 
     @Override
     public BoxCollider getBoxCollider() {
-        return boxCollider;
+        this.createBoxCollider();
+        return this.boxCollider;
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        if (GameObject.noBallLeft()) {
+            Scene.signNewScene(new GameOverScene());
+        }
     }
 }

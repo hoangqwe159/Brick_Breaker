@@ -1,6 +1,7 @@
-package Game.Physics;
+package game.physics;
 
 public interface Physics {
-    abstract BoxCollider getBoxCollider(); // ko can khai bao abstract nua
+    BoxCollider getBoxCollider(); // ko can khai bao abstract nua
+
 
 }

@@ -1,12 +1,12 @@
-package Game.Scene;
+package game.scene;
 
-import Game.*;
-import Game.Renderer.SingleimageRenderer;
+import game.*;
+import game.renderer.SingleimageRenderer;
 import tklibs.SpriteUtils;
 
-public class BackgroundGameOVerScene extends GameObject {
+public class BackgroundGameOverScene extends GameObject {
     FrameCounter idleCounter;
-    public BackgroundGameOVerScene() {
+    public BackgroundGameOverScene() {
         this.renderer = new SingleimageRenderer(SpriteUtils.loadImage("assets/images/background/game_over_paint.png"));
         this.position.set(Setting.SCREEN_WIDTH/2, Setting.SCREEN_HEIGHT/2);
         this.idleCounter = new FrameCounter(30);
@@ -17,7 +17,7 @@ public class BackgroundGameOVerScene extends GameObject {
     public void run() {
         super.run();
         if (this.idleCounter.count() && GameWindow.isAnyKeyPress) {
-            Scene.signNewScene(new WelcomeScence());
+            Scene.signNewScene(new WelcomeScene());
         }
     }
 }

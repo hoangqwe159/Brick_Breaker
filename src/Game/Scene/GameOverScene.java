@@ -1,11 +1,11 @@
-package Game.Scene;
+package game.scene;
 
-import Game.GameObject;
+import game.GameObject;
 
 public class GameOverScene extends Scene{
     @Override
     public void init() {
-        GameObject.recycleGameObject(BackgroundGameOVerScene.class);
+        GameObject.recycleGameObject(BackgroundGameOverScene.class);
     }
 
     @Override

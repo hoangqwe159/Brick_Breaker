@@ -1,4 +1,4 @@
-package Game;
+package game;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,7 +19,7 @@ public class GameWindow extends JFrame {
 
     public GameWindow() {
 //        this.setSize(Setting.SCREEN_HEIGHT, Setting.SCREEN_HEIGHT);
-        this.setTitle("Game Brick Breaker");
+        this.setTitle("game brick Breaker");
         this.setResizable(false);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 

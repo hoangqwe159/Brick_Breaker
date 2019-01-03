@@ -1,6 +1,6 @@
-package Game.Menu;
+package game.menu;
 
-import Game.GameObject;
+import game.GameObject;
 
 import java.awt.*;
 

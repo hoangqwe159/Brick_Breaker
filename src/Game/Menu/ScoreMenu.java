@@ -1,9 +1,9 @@
-package Game.Menu;
+package game.menu;
 
-import Game.GameObject;
-import Game.Renderer.TextRenderer;
-import Game.Scene.Scene;
-import Game.Setting;
+import game.GameObject;
+import game.renderer.TextRenderer;
+import game.scene.Scene;
+import game.Setting;
 import tklibs.SpriteUtils;
 
 import java.awt.*;

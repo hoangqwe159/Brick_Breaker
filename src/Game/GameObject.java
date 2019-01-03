@@ -1,16 +1,19 @@
-package Game;
+package game;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-import Game.Physics.BoxCollider;
-import Game.Physics.Physics;
+import game.ball.Ball;
+import game.physics.BoxCollider;
+import game.physics.Physics;
 
-import Game.Renderer.Renderer;
+import game.renderer.Renderer;
 import tklibs.Vector2D;
 
 
 public class GameObject {
+
+    public Vector2D size;
+
     //static quan li
     public static ArrayList<GameObject> gameObjects = new ArrayList<>();
     public static ArrayList<GameObject> topLayer = new ArrayList<>();
@@ -23,13 +26,13 @@ public class GameObject {
         for (int i = 0; i < gameObjects.size(); i++) {
             GameObject object = gameObjects.get(i);
             // object instanced clazz
-            //object instanced Physics
+            //object instanced physics
             //object active
             //
             if (object.active
                     && clazz.isAssignableFrom(object.getClass())
-                    && object  instanceof Physics
-                    && ((Physics)object).getBoxCollider().intersects(boxCollider)) {
+                    && object instanceof Physics
+                    && ((Physics)object).getBoxCollider().isColliding(boxCollider)) {
                 return (E)object;
             }
         }
@@ -46,7 +49,7 @@ public class GameObject {
         return null;
     }
 
-    public static <E extends  GameObject> E recycleGameObject(Class<E> clazz) { //Player.class, E = Player
+    public static <E extends  GameObject> E recycleGameObject(Class<E> clazz) { //paddle.class, E = paddle
         //find inactive if true => return
         //else create
         E inactiveGameObject = findInactive(clazz);
@@ -62,6 +65,7 @@ public class GameObject {
             return null;
         }
     }
+
     public static void clearAll() {
         gameObjects.clear();
         topLayer.clear();
@@ -75,7 +79,7 @@ public class GameObject {
                 gameObject.run();
             }
         }
-        System.out.println(gameObjects.size());
+//        System.out.println(gameObjects.size());
 
     }
 
@@ -109,18 +113,30 @@ public class GameObject {
 
     //ham tao
     public GameObject() {
-
         this.position = new Vector2D();
         this.velocity = new Vector2D();
         this.active = true;
         this.anchor = new Vector2D(0.5f , 0.5f);
     }
 
+    public static int countBall() {
+        int count = 0;
+        for (int i = 0; i < GameObject.gameObjects.size(); i++){
+            GameObject gameObject = GameObject.gameObjects.get(i);
+            if (gameObject.active && gameObject instanceof Ball) {
+                count += 1;
+            }
+        }
+        return count;
+    }
+
+    public static boolean noBallLeft() {
+        return GameObject.countBall() == 0;
+    }
+
     public void run() {
         this.position.addThis(this.velocity);
     }
-
-
 
     public void render (Graphics g){
         if (this.renderer != null) {
@@ -130,6 +146,7 @@ public class GameObject {
 
     public void destroy() {
         this.active = false;
+        this.velocity.set(0, 0);
     }
     //TODO
     //reset phai tac dong len position, velocity,...

@@ -1,4 +1,4 @@
-package Game.Scene;
+package game.scene;
 
 public abstract class Scene {
     //static

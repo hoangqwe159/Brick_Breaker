@@ -1,11 +1,11 @@
-package Game.Scene;
+package game.scene;
 
 
-import Game.FrameCounter;
-import Game.GameObject;
-import Game.GameWindow;
-import Game.Renderer.SingleimageRenderer;
-import Game.Setting;
+import game.FrameCounter;
+import game.GameObject;
+import game.GameWindow;
+import game.renderer.SingleimageRenderer;
+import game.Setting;
 import tklibs.SpriteUtils;
 
 public class BackgroundWelcomeScene extends GameObject {

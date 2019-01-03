@@ -1,7 +1,8 @@
-package Game.Renderer;
+package game.renderer;
 
-import Game.FrameCounter;
-import Game.GameObject;
+import game.FrameCounter;
+import game.GameObject;
+import tklibs.Vector2D;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -12,7 +13,6 @@ public class AnimationRenderer<render> extends Renderer {
     int currentImageIndex;
     boolean isOnce;
     FrameCounter nextImageCounter;
-
 
 //    public AnimationRenderer(ArrayList<BufferedImage > images) {
 //        this.images = images;
@@ -37,6 +37,10 @@ public class AnimationRenderer<render> extends Renderer {
             , boolean isOnce
             , int nextImageCount) {
         this.images = images;
+        this.sizes = new ArrayList<>();
+        for (int i = 0; i < this.images.size(); i++) {
+            this.sizes.add(new Vector2D(this.images.get(i).getWidth(), this.images.get(i).getHeight()));
+        }
         this.isOnce = isOnce;
         this.nextImageCounter = new FrameCounter(nextImageCount);
     }
@@ -48,8 +52,8 @@ public class AnimationRenderer<render> extends Renderer {
         g.drawImage(currentImage
 //                , (int) (master.position.x - currentImage.getWidth() * master.anchor.x)
 //                , (int) (master.position.y - currentImage.getHeight() * master.anchor.y)
-                , (int) (master.position.x + 40 - currentImage.getWidth() * master.anchor.x)
-                , (int) (master.position.y + 20 - currentImage.getHeight() * master.anchor.y)
+                , (int) (master.position.x - currentImage.getWidth() * master.anchor.x)
+                , (int) (master.position.y - currentImage.getHeight() * master.anchor.y)
                 , null);
 
 
@@ -69,6 +73,11 @@ public class AnimationRenderer<render> extends Renderer {
     }
 
     @Override
+    public Vector2D getCurrentImageSize() {
+        return this.sizes.get(this.currentImageIndex);
+    }
+
+    @Override
     public void reset() {
         this.currentImageIndex = 0;
     }
@@ -79,7 +88,7 @@ public class AnimationRenderer<render> extends Renderer {
 //abstract Ko can biet no chay the nao, chi can dung
 // class C1, c2.C3 chi co the ke thua 1 trong 2 C1 or C2
 // class C1, interface I1 I2 ... => class C3 co the ke thua cac thuoc tinh C1, I1, I2,...
-//VD Interface di xuyen tuong Interface bat tu, teleport => co the cam het vao Player
+//VD Interface di xuyen tuong Interface bat tu, teleport => co the cam het vao paddle
 //OOP Encapsulaton (Dong goi):tu moi thang su tu giu cac thuoc tinh, puhong thuc cua no(dong goi de dinh nghia)
                             //:setter(dua vao VD dua vao < 0), getter(tra ra VD lam tron so) (Dong goi de xu ly)
 // , Extend (ke thua): this vs super, override ham

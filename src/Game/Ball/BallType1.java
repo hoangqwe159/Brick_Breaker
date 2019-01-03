@@ -1,26 +1,34 @@
-package Game.Ball;
+package game.ball;
 
-import Game.Enemy.Enemy;
-import Game.GameObject;
-import Game.Physics.BoxCollider;
-import Game.Player.Player;
-import Game.Renderer.SingleimageRenderer;
-import Game.Scene.GameOverScene;
-import Game.Scene.Scene;
+import game.brick.AbilityBrickType3;
+import game.brick.BrickType1;
+import game.brick.BrickType2;
+import game.brick.BrickType3;
+import game.GameObject;
+import game.physics.BoxCollider;
+import game.paddle.Paddle;
+import game.renderer.SingleimageRenderer;
 import tklibs.SpriteUtils;
 
 
 public class BallType1 extends Ball {
 
     public BallType1() {
-        this.position.set(400, 400);
+        this.maxVelocity = 10;
+        this.position.set(360, 400);
         this.velocity.set(3 , -5);
-        this.anchor.set(0,0);
+        this.anchor.set(0, 0);
         GameObject.midLayer.add(this);
     }
+    public void limitVelocity() {
+        if (this.velocity.getLength() > this.maxVelocity) {
+            this.velocity.setLength(this.maxVelocity);
+        }
+    }
+
     @Override
     public void createBoxCollider() {
-        this.boxCollider =new BoxCollider(this, 30, 30);
+        this.boxCollider = new BoxCollider(this, "circle");
     }
 
     @Override
@@ -30,42 +38,37 @@ public class BallType1 extends Ball {
 
     @Override
     public void run() {
+        this.limitVelocity();
         super.run();
-        Player player = GameObject.findIntercepts(Player.class, this.boxCollider);
-        if (player != null){
-
-            // when ball hits left or right of brick
-            if(this.position.x + 29 <= player.position.x || this.position.x + 1 >= player.position.x + 150)
-            {
-                this.velocity.scaleX(-1);
-            }
-            // when ball hits top or bottom of brick
-            else
-            {
-                this.position.set(this.position.x, 540);
-                this.velocity.scaleY(-1);
-            }
+        Paddle paddle = GameObject.findIntercepts(Paddle.class, this.getBoxCollider());
+        if (paddle != null){
+            paddle.getBoxCollider().resolveCollision(this.boxCollider);
         }
 
-        Enemy enemy = GameObject.findIntercepts(Enemy.class, this.boxCollider);
-        if (enemy != null) {
-            enemy.destroy();
-            // when ball hits left or right of brick
-            if(this.position.x + 29 <= enemy.position.x || this.position.x + 1 >= enemy.position.x + 80)
-            {
-                this.velocity.scaleX(-1);
-            }
-            // when ball hits top or bottom of brick
-            else
-            {
-                this.velocity.scaleY(-1);
-            }
-
+        BrickType1 brick1 = GameObject.findIntercepts(BrickType1.class, this.getBoxCollider());
+        if (brick1 != null) {
+            brick1.getBoxCollider().resolveCollision(this.boxCollider);
+            brick1.destroy();
         }
+
+        BrickType2 brick2 = GameObject.findIntercepts(BrickType2.class, this.boxCollider);
+        if (brick2 != null) {
+            brick2.getBoxCollider().resolveCollision(this.boxCollider);
+        }
+
+        BrickType3 brick3 = GameObject.findIntercepts(BrickType3.class, this.boxCollider);
+        if (brick3 != null) {
+            brick3.getBoxCollider().resolveCollision(this.boxCollider);
+            brick3.destroy();
+        }
+
+        AbilityBrickType3 ab3 = GameObject.findIntercepts(AbilityBrickType3.class, this.boxCollider);
+        if (ab3 != null) {
+            this.destroy();
+        }
+
         this.limitBallType1Position();
-
     }
-
 
     private void limitBallType1Position() {
         if (this.position.x < 0) {
@@ -84,7 +87,6 @@ public class BallType1 extends Ball {
 
         if (this.position.y > 600) {
             this.destroy();
-            Scene.signNewScene(new GameOverScene());
         }
     }
 }

@@ -1,8 +1,8 @@
-package Game;
+package game;
 
 
-import Game.Scene.Scene;
-import Game.Scene.WelcomeScence;
+import game.scene.Scene;
+import game.scene.WelcomeScene;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +10,7 @@ import java.awt.*;
 public class GameCanvas extends JPanel {
     public GameCanvas() {
 
-        Scene.signNewScene(new WelcomeScence());
+        Scene.signNewScene(new WelcomeScene());
 
     }
 
