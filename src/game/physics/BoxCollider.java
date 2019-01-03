@@ -1,7 +1,6 @@
 package game.physics;
 
 import game.GameObject;
-import game.renderer.TextRenderer;
 import tklibs.Vector2D;
 
 public class BoxCollider {
@@ -12,6 +11,8 @@ public class BoxCollider {
     String shape;
     int width, height;
     float mass;
+    float restitutionCoeff;
+    float frictionCoeff;
 
     public BoxCollider(GameObject master) {
         this(master, master.renderer.getCurrentImageSize());
@@ -29,35 +30,39 @@ public class BoxCollider {
         this(master, master.renderer.getCurrentImageSize(), shape, mass);
     }
 
+    public BoxCollider(GameObject master, float mass, float restitutionCoeff, float frictionCoeff) {
+        this(master, (int)master.renderer.getCurrentImageSize().x, (int)master.renderer.getCurrentImageSize().y, "rectangle", mass, restitutionCoeff, frictionCoeff);
+    }
+
     public BoxCollider(GameObject master, Vector2D size) {
-        this(master, (int)size.x, (int)size.y, "rectangle", 1);
+        this(master, (int)size.x, (int)size.y, "rectangle", 1, 1, 0);
     }
 
     public BoxCollider(GameObject master, Vector2D size, String shape) {
-        this(master, (int)size.x, (int)size.y, shape, 1);
+        this(master, (int)size.x, (int)size.y, shape, 1, 1, 0);
     }
 
     public BoxCollider(GameObject master, Vector2D size, float mass) {
-        this(master, (int)size.x, (int)size.y, "rectangle", mass);
+        this(master, (int)size.x, (int)size.y, "rectangle", mass, 1, 0);
     }
 
     public BoxCollider(GameObject master, Vector2D size, String shape, float mass) {
-        this(master, (int)size.x, (int)size.y, shape, mass);
+        this(master, (int)size.x, (int)size.y, shape, mass, 1, 0);
     }
 
     public BoxCollider(GameObject master, int width, int height) {
-        this(master, width, height, "rectangle", 1);
+        this(master, width, height, "rectangle", 1, 1, 0);
     }
 
     public BoxCollider(GameObject master, int width, int height, float mass) {
-        this(master, width, height, "rectangle", mass);
+        this(master, width, height, "rectangle", mass, 1, 0);
     }
 
     public BoxCollider(GameObject master, int width, int height, String shape) {
-        this(master, width, height, "rectangle", 1);
+        this(master, width, height, "rectangle", 1, 1, 0);
     }
 
-    public BoxCollider(GameObject master, int width, int height, String shape, float mass) {
+    public BoxCollider(GameObject master, int width, int height, String shape, float mass, float restitutionCoeff, float frictionCoeff) {
         this.topLeft = master.position;
         this.botRight = master.position.clone().addThis(width, height);
 //        System.out.println(this.topLeft);
@@ -68,6 +73,8 @@ public class BoxCollider {
         this.mass = mass;
         this.width = width;
         this.height = height;
+        this.restitutionCoeff = restitutionCoeff;
+        this.frictionCoeff = frictionCoeff;
     }
 
     public boolean isColliding(BoxCollider other) {
@@ -110,12 +117,19 @@ public class BoxCollider {
 
     public void resolveCollision(BoxCollider other) {
         Vector2D normal = this.normal(other);
-        System.out.println(normal);
         if (normal != null) {
-            float normVel = other.velocity.clone().subtractThis(this.velocity).dot(normal);
+            Vector2D relVel = other.velocity.clone().subtractThis(this.velocity);
+            float normVel = relVel.dot(normal);
+            Vector2D maxTangVel = relVel.subtractThis(normal.clone().scaleThis(normVel));
+            Vector2D tangVelUnit = maxTangVel.clone().setLength(1);
             if (normVel <= 0) {
-                float j = -2f * normVel;
+                float j = -(1 + Math.min(this.restitutionCoeff, other.restitutionCoeff)) * normVel;
                 j /= 1 / this.mass + 1 / other.mass;
+                Vector2D tanVelChange = tangVelUnit.scaleThis(j * (this.frictionCoeff + other.frictionCoeff));
+                Vector2D otherTanVelChange = tanVelChange.clone().scaleThis(1 / other.mass);
+                Vector2D thisTanVelChange = tanVelChange.clone().scaleThis(1 / this.mass);
+                other.velocity.subtractThis(otherTanVelChange.setLength(Math.min(otherTanVelChange.getLength(), maxTangVel.getLength())));
+                this.velocity.addThis(thisTanVelChange.setLength(Math.min(thisTanVelChange.getLength(), maxTangVel.getLength())));
                 Vector2D impulse = normal.scaleThis(j);
                 other.velocity.addThis(impulse.scaleThis(1 / other.mass));
                 this.velocity.subtractThis(impulse.scaleThis(1 / this.mass));

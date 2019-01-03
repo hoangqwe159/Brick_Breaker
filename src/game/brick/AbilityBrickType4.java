@@ -15,7 +15,7 @@ public class AbilityBrickType4 extends AbilityBrick {
 
     @Override
     public void createBoxCollider() {
-        this.boxCollider = new BoxCollider(this);
+        this.boxCollider = new BoxCollider(this, "circle");
     }
 
     @Override

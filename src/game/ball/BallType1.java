@@ -67,26 +67,6 @@ public class BallType1 extends Ball {
             this.destroy();
         }
 
-        this.limitBallType1Position();
-    }
-
-    private void limitBallType1Position() {
-        if (this.position.x < 0) {
-            this.position.set(0, this.position.y);
-            this.velocity.scaleX(-1);
-        }
-        if (this.position.x > 800 -30) {
-            this.position.set(800 -30, this.position.y);
-            this.velocity.scaleX(-1);
-        }
-
-        if (this.position.y < 0) {
-            this.position.set(this.position.x, 0);
-            this.velocity.scaleY(-1);
-        }
-
-        if (this.position.y > 600) {
-            this.destroy();
-        }
+        this.limitGameObjectPosition();
     }
 }

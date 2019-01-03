@@ -14,7 +14,6 @@ public class Paddle extends GameObject implements Physics {
 
     BoxCollider boxCollider;
 
-
     public Paddle() {
         // game.paddle.paddle.playerName; // co the goi y het ben canvas
         super();
@@ -28,7 +27,6 @@ public class Paddle extends GameObject implements Physics {
 
     private void createRenderer() {
         this.renderer = new SingleimageRenderer(SpriteUtils.loadImage("assets/images/paddle/0.png"));
-
     }
 
     @Override
@@ -36,9 +34,9 @@ public class Paddle extends GameObject implements Physics {
         super.run();
         this.move();
         this.hitAb();
-        this.limitPaddlePosition();
+        this.limitGameObjectPosition();
     }
-    //TODO continue editting
+    //TODO continue editing
 
     public void hitAb() {
         AbilityBrickType4 ab4 = GameObject.findIntercepts(AbilityBrickType4.class, this.getBoxCollider());
@@ -60,7 +58,6 @@ public class Paddle extends GameObject implements Physics {
     }
 
     private void move() {
-
         this.velocity.set(0, 0);
 
         if (GameWindow.isLeftPress) {
@@ -72,15 +69,6 @@ public class Paddle extends GameObject implements Physics {
         this.velocity.setLength(Setting.PADDLE_VECLOCITY_DOWN.y);
     }
 
-    private void limitPaddlePosition() {
-        if (this.position.x < 0) {
-            this.position.set(0, this.position.y);
-        }
-        if (this.position.x > 800 - 150) {
-            this.position.set(800 - 150, this.position.y);
-        }
-    }
-
     @Override
     public BoxCollider getBoxCollider() {
         this.createBoxCollider();
@@ -88,7 +76,7 @@ public class Paddle extends GameObject implements Physics {
     }
 
     private void createBoxCollider() {
-        this.boxCollider = new BoxCollider(this, this.renderer.getCurrentImageSize(), Float.POSITIVE_INFINITY);
+        this.boxCollider = new BoxCollider(this, Float.POSITIVE_INFINITY, 0.99f, 0.5f);
     }
 
     @Override

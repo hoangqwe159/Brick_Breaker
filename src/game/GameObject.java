@@ -144,6 +144,23 @@ public class GameObject {
         }
     }
 
+    public void limitGameObjectPosition() {
+        if (this.position.x < 0) {
+            this.position.set(0, this.position.y);
+        }
+        else if (this.position.x > Setting.SCREEN_WIDTH - this.renderer.getCurrentImageSize().x) {
+            this.position.set(Setting.SCREEN_WIDTH - this.renderer.getCurrentImageSize().x, this.position.y);
+        }
+
+        if (this.position.y < 0) {
+            this.position.set(this.position.x, 0);
+        }
+
+        else if (this.position.y > Setting.SCREEN_HEIGHT - this.renderer.getCurrentImageSize().y) {
+            this.position.set(this.position.x, Setting.SCREEN_HEIGHT - this.renderer.getCurrentImageSize().y);
+        }
+    }
+
     public void destroy() {
         this.active = false;
         this.velocity.set(0, 0);
