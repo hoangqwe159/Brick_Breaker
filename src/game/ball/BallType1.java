@@ -15,6 +15,7 @@ public class BallType1 extends Ball {
 
     public BallType1() {
         this.maxVelocity = 10;
+        this.thresholdVelocity = 0.2f;
         this.position.set(360, 400);
         this.velocity.set(3 , -5);
         this.anchor.set(0, 0);
@@ -22,6 +23,14 @@ public class BallType1 extends Ball {
     }
     public void limitVelocity() {
         if (this.velocity.getLength() > this.maxVelocity) {
+            if (this.velocity.getLength() > 1.8 * this.maxVelocity) {
+                if (this.velocity.y < this.thresholdVelocity) {
+                    this.velocity.setY(-5);
+                }
+                else if (this.velocity.x < this.thresholdVelocity) {
+                    this.velocity.setX(5);
+                }
+            }
             this.velocity.setLength(this.maxVelocity);
         }
     }

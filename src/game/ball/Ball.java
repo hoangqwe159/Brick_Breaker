@@ -10,6 +10,7 @@ import game.scene.Scene;
 public abstract class Ball extends GameObject implements Physics {
     public BoxCollider boxCollider;
     public int maxVelocity;
+    public float thresholdVelocity;
     public Ball() {
         this.createRenderer();
         this.createBoxCollider();
