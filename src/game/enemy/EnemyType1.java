@@ -1,9 +1,8 @@
-package Game.Enemy;
+package game.enemy;
 
-import Game.Ball.Ball;
-import Game.GameObject;
-import Game.Physics.BoxCollider;
-import Game.Renderer.SingleimageRenderer;
+import game.GameObject;
+import game.physics.BoxCollider;
+import game.renderer.SingleimageRenderer;
 import tklibs.SpriteUtils;
 
 public class EnemyType1 extends Enemy {
@@ -25,7 +24,7 @@ public class EnemyType1 extends Enemy {
     @Override
     public void run() {
         super.run();
-//        Ball ball = GameObject.findIntercepts(Ball.class, this.boxCollider);
+//        ball ball = GameObject.findIntercepts(ball.class, this.boxCollider);
 
     }
 }

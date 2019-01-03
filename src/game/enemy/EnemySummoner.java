@@ -1,6 +1,6 @@
-package Game.Enemy;
+package game.enemy;
 
-import Game.GameObject;
+import game.GameObject;
 
 public class EnemySummoner extends GameObject{
     EnemyType1 enemy1;

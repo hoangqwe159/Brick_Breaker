@@ -1,6 +1,6 @@
-package Game.Scene;
+package game.scene;
 
-import Game.GameObject;
+import game.GameObject;
 
 public class WelcomeScence extends Scene {
     @Override

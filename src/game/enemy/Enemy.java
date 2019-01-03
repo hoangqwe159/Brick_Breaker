@@ -1,13 +1,12 @@
-package Game.Enemy;
+package game.enemy;
 
 
-import Game.FrameCounter;
-import Game.GameObject;
+import game.FrameCounter;
+import game.GameObject;
 
-import Game.Menu.ScoreMenu;
-import Game.Physics.BoxCollider;
-import Game.Physics.Physics;
-import Game.Scene.Scene;
+import game.physics.BoxCollider;
+import game.physics.Physics;
+import game.scene.Scene;
 
 
 public abstract class Enemy extends GameObject implements Physics {

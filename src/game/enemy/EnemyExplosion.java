@@ -1,7 +1,7 @@
-package Game.Enemy;
+package game.enemy;
 
-import Game.GameObject;
-import Game.Renderer.AnimationRenderer;
+import game.GameObject;
+import game.renderer.AnimationRenderer;
 import tklibs.SpriteUtils;
 
 public class EnemyExplosion extends GameObject {
