@@ -3,6 +3,7 @@ package game.power;
 import game.GameObject;
 import game.physics.BoxCollider;
 import game.physics.Physics;
+import game.renderer.AnimationRenderer;
 import game.renderer.SingleimageRenderer;
 import tklibs.SpriteUtils;
 
@@ -22,7 +23,7 @@ public class Rocket extends GameObject implements Physics {
     }
 
     public void createRenderer() {
-        this.renderer = new SingleimageRenderer(SpriteUtils.loadImage("assets/images/ball/0.png"));
+        this.renderer = new AnimationRenderer(SpriteUtils.loadImages("assets/images/rocket"));
     }
 
     @Override
