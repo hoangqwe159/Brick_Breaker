@@ -61,6 +61,7 @@ public class BallType1 extends Ball {
         super.run();
         Paddle paddle = GameObject.findIntercepts(Paddle.class, this.getBoxCollider());
         if (paddle != null){
+            System.out.println("Collide");
             paddle.getBoxCollider().resolveCollision(this.boxCollider);
         }
 

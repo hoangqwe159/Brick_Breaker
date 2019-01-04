@@ -5,6 +5,7 @@ import game.ball.Ball;
 import game.brick.AbilityBrickType4;
 import game.physics.BoxCollider;
 import game.physics.Physics;
+import game.power.Rocket;
 import game.renderer.SingleimageRenderer;
 import game.scene.GameOverScene;
 import game.scene.Scene;
@@ -13,11 +14,12 @@ import tklibs.SpriteUtils;
 public class Paddle extends GameObject implements Physics {
 
     BoxCollider boxCollider;
+    FrameCounter fireCounter;
 
     public Paddle() {
         // game.paddle.paddle.playerName; // co the goi y het ben canvas
         super();
-
+        this.fireCounter = new FrameCounter(20);
         this.createRenderer();
         this.position.set(400, 570);
         this.anchor.set(0f,0f);
@@ -29,10 +31,20 @@ public class Paddle extends GameObject implements Physics {
         this.renderer = new SingleimageRenderer(SpriteUtils.loadImage("assets/images/paddle/0.png"));
     }
 
+    public void fire() {
+        if (GameWindow.isFirePress) {
+            if (this.fireCounter.count()) {
+                GameObject.recycleGameObject(Rocket.class).position.set(this.position.clone().addThis(this.renderer.getCurrentImageSize().clone().scaleThis(0.5f)));
+                this.fireCounter.reset();
+            }
+        }
+    }
+
     @Override
     public void run() {
         super.run();
         this.move();
+        this.fire();
         this.hitAb();
         this.limitGameObjectPosition();
     }

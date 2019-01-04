@@ -4,6 +4,7 @@ package game.brick;
 import game.FrameCounter;
 import game.GameObject;
 
+import game.power.Rocket;
 import game.physics.BoxCollider;
 import game.physics.Physics;
 import game.scene.Scene;
@@ -19,7 +20,6 @@ public abstract class Brick extends GameObject implements Physics {
         this.fireCounter = new FrameCounter(20);
         this.createBoxCollider();
         GameObject.midLayer.add(this);
-
     }
 
     public abstract void createBoxCollider();
@@ -30,12 +30,21 @@ public abstract class Brick extends GameObject implements Physics {
     @Override
     public void run() {
         super.run();
+        this.hitRocket();
     }
 
     @Override
     public BoxCollider getBoxCollider() {
         this.createBoxCollider();
         return this.boxCollider;
+    }
+
+    public void hitRocket() {
+        Rocket rocket = GameObject.findIntercepts(Rocket.class, this.getBoxCollider());
+        if (rocket != null) {
+            rocket.destroy();
+            this.destroy();
+        }
     }
 
     @Override

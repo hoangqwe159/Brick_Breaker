@@ -4,6 +4,7 @@ import game.Background;
 
 
 import game.ball.BallType1;
+import game.power.Rocket;
 import game.brick.AbilityBrickType4;
 import game.brick.BrickSummoner;
 import game.GameObject;
@@ -16,17 +17,20 @@ import javax.sound.sampled.Clip;
 
 
 public class SceneStage1 extends Scene {
+    public static int rocketLeft;
     int count = 0;
     Clip music;
 
     @Override
     public void init() {
+        SceneStage1.rocketLeft = 0;
         GameObject.recycleGameObject(Background.class);
         GameObject.recycleGameObject(Paddle.class);
         GameObject.recycleGameObject(BackgroundMenu.class);
         GameObject.recycleGameObject(ScoreMenu.class);
         GameObject.recycleGameObject(BallType1.class);
         GameObject.recycleGameObject(AbilityBrickType4.class);
+        GameObject.recycleGameObject(Rocket.class);
 //        BrickSummoner.summonType1(100 + 80 * 1 , 100 + 40 * 1);
 //        BrickSummoner.summonType2(100 + 80 * 2 , 100 + 40 * 1);
         //       BrickSummoner.summonType3(0 , 100 + 40 * 1);
