@@ -121,11 +121,10 @@ public class BoxCollider {
             Vector2D relVel = other.velocity.clone().subtractThis(this.velocity);
             float normVel = relVel.dot(normal);
             Vector2D maxTangVel = relVel.subtractThis(normal.clone().scaleThis(normVel));
-            Vector2D tangVelUnit = maxTangVel.clone().setLength(1);
             if (normVel <= 0) {
                 float j = -(1 + Math.min(this.restitutionCoeff, other.restitutionCoeff)) * normVel;
                 j /= 1 / this.mass + 1 / other.mass;
-                Vector2D tanVelChange = tangVelUnit.scaleThis(j * (this.frictionCoeff + other.frictionCoeff));
+                Vector2D tanVelChange = maxTangVel.clone().setLength(1).scaleThis(j * (this.frictionCoeff + other.frictionCoeff));
                 Vector2D otherTanVelChange = tanVelChange.clone().scaleThis(1 / other.mass);
                 Vector2D thisTanVelChange = tanVelChange.clone().scaleThis(1 / this.mass);
                 other.velocity.subtractThis(otherTanVelChange.setLength(Math.min(otherTanVelChange.getLength(), maxTangVel.getLength())));
@@ -162,8 +161,7 @@ public class BoxCollider {
                     if (otherCenter.y < this.botRight.y) {
                         return otherCenter.set(-1, 0);
                     }
-                    float height = this.botRight.y - this.topLeft.y;
-                    return otherCenter.subtractThis(this.topLeft.clone().addY(height)).setLength(1);
+                    return otherCenter.subtractThis(this.topLeft.clone().addY(this.height)).setLength(1);
                 }
                 if (otherCenter.x < this.botRight.x) {
                     if (otherCenter.y <= this.topLeft.y) {
@@ -172,8 +170,7 @@ public class BoxCollider {
                     return otherCenter.set(0, 1);
                 }
                 if (otherCenter.y <= this.topLeft.y) {
-                    float width = this.botRight.x - this.topLeft.x;
-                    return otherCenter.subtractThis(this.topLeft.clone().addX(width)).setLength(1);
+                    return otherCenter.subtractThis(this.topLeft.clone().addX(this.width)).setLength(1);
                 }
                 if (otherCenter.y < this.botRight.y) {
                     return otherCenter.set(1, 0);

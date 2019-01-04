@@ -76,7 +76,7 @@ public class Paddle extends GameObject implements Physics {
     }
 
     private void createBoxCollider() {
-        this.boxCollider = new BoxCollider(this, Float.POSITIVE_INFINITY, 0.99f, 0.5f);
+        this.boxCollider = new BoxCollider(this, Float.POSITIVE_INFINITY, 0.99f, 0.1f);
     }
 
     @Override

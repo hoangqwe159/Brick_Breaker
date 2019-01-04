@@ -24,11 +24,21 @@ public class BallType1 extends Ball {
     public void limitVelocity() {
         if (this.velocity.getLength() > this.maxVelocity) {
             if (this.velocity.getLength() > 1.8 * this.maxVelocity) {
-                if (this.velocity.y < this.thresholdVelocity) {
-                    this.velocity.setY(-5);
+                if (Math.abs(this.velocity.y) < this.thresholdVelocity) {
+                    if (this.velocity.y != 0) {
+                        this.velocity.setY(2f * this.maxVelocity * Math.signum(this.velocity.y) * 0.9f);
+                    }
+                    else {
+                        this.velocity.setY(-2f * this.maxVelocity);
+                    }
                 }
-                else if (this.velocity.x < this.thresholdVelocity) {
-                    this.velocity.setX(5);
+                else if (Math.abs(this.velocity.x) < this.thresholdVelocity) {
+                    if (this.velocity.x != 0) {
+                        this.velocity.setX(2f * this.maxVelocity * Math.signum(this.velocity.x) * 0.9f);
+                    }
+                    else {
+                        this.velocity.setX(2f * this.maxVelocity);
+                    }
                 }
             }
             this.velocity.setLength(this.maxVelocity);
