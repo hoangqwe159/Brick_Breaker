@@ -19,7 +19,7 @@ public class Paddle extends GameObject implements Physics {
     public Paddle() {
         // game.paddle.paddle.playerName; // co the goi y het ben canvas
         super();
-        this.fireCounter = new FrameCounter(20);
+        this.fireCounter = new FrameCounter(60);
         this.createRenderer();
         this.position.set(400, 570);
         this.anchor.set(0f,0f);
@@ -32,8 +32,8 @@ public class Paddle extends GameObject implements Physics {
     }
 
     public void fire() {
-        if (GameWindow.isFirePress) {
-            if (this.fireCounter.count()) {
+        if (this.fireCounter.count()) {
+            if (GameWindow.isFirePress) {
                 GameObject.recycleGameObject(Rocket.class).position.set(this.position.clone().addThis(this.renderer.getCurrentImageSize().clone().scaleThis(0.5f)));
                 this.fireCounter.reset();
             }

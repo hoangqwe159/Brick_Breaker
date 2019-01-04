@@ -14,7 +14,8 @@ public class Rocket extends GameObject implements Physics {
         super();
         this.createRenderer();
         this.createBoxCollider();
-        this.velocity.set(0, -3);
+        this.acceleration.setY(-0.22f);
+//        this.velocity.set(0, -8);
         this.anchor.setY(1f);
         GameObject.midLayer.add(this);
     }
@@ -36,11 +37,5 @@ public class Rocket extends GameObject implements Physics {
     public BoxCollider getBoxCollider() {
         this.createBoxCollider();
         return this.boxCollider;
-    }
-
-    @Override
-    public void destroy() {
-        super.destroy();
-        this.velocity.set(0, -3);
     }
 }

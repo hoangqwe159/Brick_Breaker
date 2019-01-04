@@ -81,6 +81,12 @@ public class Vector2D {
         return this;
     }
 
+    public Vector2D scaleThis(float rateX, float rateY) {
+        this.x *= rateX;
+        this.y *= rateY;
+        return this;
+    }
+
     public Vector2D scaleThis(Vector2D rate) {
         this.x *= rate.x;
         this.y *= rate.y;

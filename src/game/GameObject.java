@@ -107,6 +107,8 @@ public class GameObject {
     //thuoc tinh;
     public Vector2D position;
     public Vector2D velocity;
+    public Vector2D oldVelocity;
+    public Vector2D acceleration;
     public Renderer renderer;
     public boolean active;
     public Vector2D anchor;
@@ -115,6 +117,8 @@ public class GameObject {
     public GameObject() {
         this.position = new Vector2D();
         this.velocity = new Vector2D();
+        this.oldVelocity = new Vector2D();
+        this.acceleration = new Vector2D();
         this.active = true;
         this.anchor = new Vector2D(0.5f , 0.5f);
     }
@@ -135,7 +139,17 @@ public class GameObject {
     }
 
     public void run() {
-        this.position.addThis(this.velocity);
+        this.updatePosition();
+    }
+
+    private void updatePosition() {
+        this.updateVelocity();
+        this.position.addThis(this.velocity.clone().addThis(this.oldVelocity).scaleThis(0.5f));
+    }
+
+    private void updateVelocity() {
+        this.oldVelocity = this.velocity;
+        this.velocity.addThis(this.acceleration);
     }
 
     public void render (Graphics g){

@@ -63,8 +63,8 @@ public class BoxCollider {
     }
 
     public BoxCollider(GameObject master, int width, int height, String shape, float mass, float restitutionCoeff, float frictionCoeff) {
-        this.topLeft = master.position;
-        this.botRight = master.position.clone().addThis(width, height);
+        this.topLeft = master.position.clone().subtractThis(master.anchor.clone().scaleThis(width, height));
+        this.botRight = this.topLeft.clone().addThis(width, height);
 //        System.out.println(this.topLeft);
 //        System.out.println(this.botRight);
         this.anchor = master.anchor;
