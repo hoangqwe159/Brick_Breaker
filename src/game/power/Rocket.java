@@ -15,6 +15,7 @@ public class Rocket extends GameObject implements Physics {
         this.createRenderer();
         this.createBoxCollider();
         this.velocity.set(0, -3);
+        this.anchor.setY(1f);
         GameObject.midLayer.add(this);
     }
 
@@ -23,7 +24,7 @@ public class Rocket extends GameObject implements Physics {
     }
 
     public void createRenderer() {
-        this.renderer = new AnimationRenderer(SpriteUtils.loadImages("assets/images/rocket"));
+        this.renderer = new AnimationRenderer(SpriteUtils.loadImages("assets/images/rocket"), false, 0);
     }
 
     @Override

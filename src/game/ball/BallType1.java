@@ -7,6 +7,7 @@ import game.brick.BrickType3;
 import game.GameObject;
 import game.physics.BoxCollider;
 import game.paddle.Paddle;
+import game.renderer.AnimationRenderer;
 import game.renderer.SingleimageRenderer;
 import tklibs.SpriteUtils;
 
@@ -52,7 +53,7 @@ public class BallType1 extends Ball {
 
     @Override
     public void createRenderer() {
-        this.renderer = new SingleimageRenderer(SpriteUtils.loadImage("assets/images/ball/0.png"));
+        this.renderer = new AnimationRenderer(SpriteUtils.loadImages("assets/images/ball"), false, 0);
     }
 
     @Override

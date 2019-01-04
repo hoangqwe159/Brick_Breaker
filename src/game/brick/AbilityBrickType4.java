@@ -20,6 +20,6 @@ public class AbilityBrickType4 extends AbilityBrick {
 
     @Override
     public void createRenderer() {
-        this.renderer = new SingleimageRenderer(SpriteUtils.loadImage("assets/images/ball/0.png"));
+        this.renderer = new SingleimageRenderer(SpriteUtils.loadImage("assets/images/1.png"));
     }
 }
