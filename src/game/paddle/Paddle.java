@@ -19,7 +19,7 @@ public class Paddle extends GameObject implements Physics {
     public Paddle() {
         // game.paddle.paddle.playerName; // co the goi y het ben canvas
         super();
-        this.fireCounter = new FrameCounter(60);
+        this.fireCounter = new FrameCounter(0);
         this.createRenderer();
         this.position.set(400, 570);
         this.anchor.set(0f,0f);

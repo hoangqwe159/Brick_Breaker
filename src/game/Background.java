@@ -25,6 +25,5 @@ public class Background extends GameObject {
             this.velocity.set(0, 0);
             this.position.set(0, 0);
         }
-
     }
 }

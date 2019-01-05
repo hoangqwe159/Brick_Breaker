@@ -13,12 +13,12 @@ public class BrickType1 extends Brick {
 
     @Override
     public void createBoxCollider() {
-        this.boxCollider = new BoxCollider(this, 80, 40, Float.POSITIVE_INFINITY);
+        this.boxCollider = new BoxCollider(this, Float.POSITIVE_INFINITY);
     }
 
     @Override
     public void createRenderer() {
-        this.renderer = new SingleimageRenderer(SpriteUtils.loadImage("assets/images/enemy/0.png"));
+        this.renderer = new SingleimageRenderer(SpriteUtils.loadImage("assets/images/enemy/1.png"));
     }
 
     @Override

@@ -38,6 +38,7 @@ public class GameObject {
         }
         return null;
     }
+
     public static <E extends GameObject> E findInactive(Class<E> clazz) {
         for (int i = 0; i < gameObjects.size(); i++) {
             GameObject object = gameObjects.get(i);
@@ -73,6 +74,7 @@ public class GameObject {
         botLayer.clear();
     }
     public static void runAll() {
+        System.out.println(gameObjects.size());
         for (int i = 0; i < gameObjects.size(); i++) {
             GameObject gameObject = gameObjects.get(i);
             if (gameObject.active) {
@@ -136,6 +138,21 @@ public class GameObject {
 
     public static boolean noBallLeft() {
         return GameObject.countBall() == 0;
+    }
+
+    public static <E extends GameObject> E resolveCollision(Class<E> clazz, BoxCollider boxCollider) {
+        return GameObject.resolveCollision(clazz, boxCollider, false);
+    }
+
+    public static <E extends GameObject> E resolveCollision(Class<E> clazz, BoxCollider boxCollider, boolean destroy) {
+        E object = GameObject.findIntercepts(clazz, boxCollider);
+        if (object != null) {
+            ((Physics) object).getBoxCollider().resolveCollision(boxCollider);
+            if (destroy) {
+                object.destroy();
+            }
+        }
+        return object;
     }
 
     public void run() {

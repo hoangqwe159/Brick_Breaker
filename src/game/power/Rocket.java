@@ -1,6 +1,7 @@
 package game.power;
 
 import game.GameObject;
+import game.Setting;
 import game.physics.BoxCollider;
 import game.physics.Physics;
 import game.renderer.AnimationRenderer;
@@ -25,17 +26,28 @@ public class Rocket extends GameObject implements Physics {
     }
 
     public void createRenderer() {
-        this.renderer = new AnimationRenderer(SpriteUtils.loadImages("assets/images/rocket"), false, 0);
+        this.renderer = new AnimationRenderer(SpriteUtils.loadImages("assets/images/Backup/rocket"), false, 0);
     }
 
     @Override
     public void run() {
         super.run();
+        this.limitGameObjectPosition();
     }
 
     @Override
     public BoxCollider getBoxCollider() {
         this.createBoxCollider();
         return this.boxCollider;
+    }
+
+    @Override
+    public void limitGameObjectPosition() {
+        if (this.position.x < -this.renderer.getCurrentImageSize().x
+        || this.position.x > Setting.SCREEN_WIDTH
+        || this.position.y < -this.renderer.getCurrentImageSize().y
+        || this.position.y > Setting.SCREEN_HEIGHT) {
+            this.destroy();
+        }
     }
 }

@@ -4,6 +4,7 @@ import game.Background;
 
 
 import game.ball.BallType1;
+import game.maps.Map;
 import game.power.Rocket;
 import game.brick.AbilityBrickType4;
 import game.brick.BrickSummoner;
@@ -34,21 +35,23 @@ public class SceneStage1 extends Scene {
 //        BrickSummoner.summonType1(100 + 80 * 1 , 100 + 40 * 1);
 //        BrickSummoner.summonType2(100 + 80 * 2 , 100 + 40 * 1);
         //       BrickSummoner.summonType3(0 , 100 + 40 * 1);
+        Map map = Map.load("assets/map/brick_level_2.json");
+        map.generate();
 
 
-        for (int i = 0; i < 8; i++) {
-            for (int k = 1; k < 3; k++) {
-                BrickSummoner.summonType1(100 + 80 * i , 100 + 40 * k);
-            }
-        }
-
-        for (int i = 0; i < 8; i++) {
-            BrickSummoner.summonType2(100 + 80 * i , 100 + 40 * 3);
-        }
-
-        for (int i = 0; i < 8; i++) {
-            BrickSummoner.summonType3(100 + 80 * i , 100);
-        }
+//        for (int i = 0; i < 8; i++) {
+//            for (int k = 1; k < 3; k++) {
+//                BrickSummoner.summonType1(100 + 80 * i , 100 + 40 * k);
+//            }
+//        }
+//
+//        for (int i = 0; i < 8; i++) {
+//            BrickSummoner.summonType2(100 + 80 * i , 100 + 40 * 3);
+//        }
+//
+//        for (int i = 0; i < 8; i++) {
+//            BrickSummoner.summonType3(100 + 80 * i , 100);
+//        }
 
 
 

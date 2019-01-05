@@ -18,6 +18,6 @@ public class BrickType2 extends Brick {
 
     @Override
     public void createRenderer() {
-        this.renderer = new SingleimageRenderer(SpriteUtils.loadImage("assets/images/enemy/unbreakable_brick.png"));
+        this.renderer = new SingleimageRenderer(SpriteUtils.loadImage("assets/images/enemy/2.png"));
     }
 }

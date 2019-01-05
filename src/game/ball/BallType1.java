@@ -11,6 +11,8 @@ import game.renderer.AnimationRenderer;
 import game.renderer.SingleimageRenderer;
 import tklibs.SpriteUtils;
 
+import java.util.ArrayList;
+
 
 public class BallType1 extends Ball {
 
@@ -53,40 +55,23 @@ public class BallType1 extends Ball {
 
     @Override
     public void createRenderer() {
-        this.renderer = new AnimationRenderer(SpriteUtils.loadImages("assets/images/ball"), false, 0);
+        this.renderer = new SingleimageRenderer(SpriteUtils.loadImage("assets/images/ball/0.png"));
     }
 
     @Override
     public void run() {
         this.limitVelocity();
         super.run();
-        Paddle paddle = GameObject.findIntercepts(Paddle.class, this.getBoxCollider());
-        if (paddle != null){
-            paddle.getBoxCollider().resolveCollision(this.boxCollider);
-        }
 
-        BrickType1 brick1 = GameObject.findIntercepts(BrickType1.class, this.getBoxCollider());
-        if (brick1 != null) {
-            brick1.getBoxCollider().resolveCollision(this.boxCollider);
-            brick1.destroy();
-        }
-
-        BrickType2 brick2 = GameObject.findIntercepts(BrickType2.class, this.boxCollider);
-        if (brick2 != null) {
-            brick2.getBoxCollider().resolveCollision(this.boxCollider);
-        }
-
-        BrickType3 brick3 = GameObject.findIntercepts(BrickType3.class, this.boxCollider);
-        if (brick3 != null) {
-            brick3.getBoxCollider().resolveCollision(this.boxCollider);
-            brick3.destroy();
-        }
+        GameObject.resolveCollision(Paddle.class, this.getBoxCollider());
+        GameObject.resolveCollision(BrickType1.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(BrickType2.class, this.getBoxCollider());
+        GameObject.resolveCollision(BrickType3.class, this.getBoxCollider(), true);
 
         AbilityBrickType3 ab3 = GameObject.findIntercepts(AbilityBrickType3.class, this.boxCollider);
         if (ab3 != null) {
             this.destroy();
         }
-
         this.limitGameObjectPosition();
     }
 }
