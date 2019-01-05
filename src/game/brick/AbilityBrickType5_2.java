@@ -11,9 +11,9 @@ import tklibs.Vector2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-public class AbilityBrickType5 extends AbilityBrick {
+public class AbilityBrickType5_2 extends AbilityBrick {
 
-    public AbilityBrickType5() {
+    public AbilityBrickType5_2() {
         this.velocity.setY(10);
         GameObject.midLayer.add(this);
     }
@@ -38,10 +38,16 @@ public class AbilityBrickType5 extends AbilityBrick {
                 gameObject.renderer.images.clear();
                 gameObject.renderer.sizes.clear();
                 for (int j = 0; j < gameObject.renderer.originalImages.size(); j++) {
-                    gameObject.renderer.images.add(ImageProcessing.scaleImage(gameObject.renderer.originalImages.get(j), (int)(1.5 * clonedSizes.get(j).x), (int)(1.5 * clonedSizes.get(j).y)));
+                    gameObject.renderer.images.add(ImageProcessing.scaleImage(gameObject.renderer.originalImages.get(j), (int)(0.7 * clonedSizes.get(j).x), (int)(0.7 * clonedSizes.get(j).y)));
                     gameObject.renderer.sizes.add(new Vector2D(gameObject.renderer.images.get(j).getWidth(), gameObject.renderer.images.get(j).getHeight()));
                 }
             }
         }
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        this.velocity.setY(10);
     }
 }

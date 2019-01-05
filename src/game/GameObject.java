@@ -136,10 +136,6 @@ public class GameObject {
         return count;
     }
 
-    public static boolean noBallLeft() {
-        return GameObject.countBall() == 0;
-    }
-
     public static <E extends GameObject> E resolveCollision(Class<E> clazz, BoxCollider boxCollider) {
         return GameObject.resolveCollision(clazz, boxCollider, false, true);
     }

@@ -4,10 +4,7 @@ import game.Background;
 
 
 import game.ball.BallType1;
-import game.brick.AbilityBrickType5;
-import game.maps.Map;
-import game.power.Rocket;
-import game.brick.AbilityBrickType4;
+import game.brick.AbilityBrickType5_1;
 import game.brick.BrickSummoner;
 import game.GameObject;
 
@@ -25,62 +22,34 @@ public class SceneStage1 extends Scene {
 
     @Override
     public void init() {
+        Scene.lives = 2;
         SceneStage1.rocketLeft = 0;
         GameObject.recycleGameObject(Background.class);
         GameObject.recycleGameObject(Paddle.class);
         GameObject.recycleGameObject(BackgroundMenu.class);
         GameObject.recycleGameObject(ScoreMenu.class);
         GameObject.recycleGameObject(BallType1.class);
-        GameObject.recycleGameObject(AbilityBrickType5.class);
-//        BrickSummoner.summonType1(100 + 80 * 1 , 100 + 40 * 1);
-//        BrickSummoner.summonType2(100 + 80 * 2 , 100 + 40 * 1);
-        //       BrickSummoner.summonType3(0 , 100 + 40 * 1);
-        Map map = Map.load("assets/map/brick_level_2.json");
-        map.generate();
-
-
-//        for (int i = 0; i < 8; i++) {
-//            for (int k = 1; k < 3; k++) {
-//                BrickSummoner.summonType1(100 + 80 * i , 100 + 40 * k);
-//            }
-//        }
-//
-//        for (int i = 0; i < 8; i++) {
-//            BrickSummoner.summonType2(100 + 80 * i , 100 + 40 * 3);
-//        }
-//
-//        for (int i = 0; i < 8; i++) {
-//            BrickSummoner.summonType3(100 + 80 * i , 100);
-//        }
-
-
-
-
-//        this.count++;
-//        if (this.count > 100) {
-//            new BrickSummoner();
-//            this.count = 0;
-//        }
-//        GameObject.recycleGameObject(BackgroundMenu.class);
-//        GameObject.recycleGameObject(ScoreMenu.class);
-//        this.music = AudioUtils.loadSound("assets/music/1.wav");
-
-//
-//        FloatControl musicControl = (FloatControl) music.getControl(FloatControl.Type.MASTER_GAIN);// lay ra cai control
-//        musicControl.setValue(-10);
-//
-//        AudioUtils.replay(this.music);
-
+        for (int i = 0; i < 8; i++) {
+            BrickSummoner.summonType0_1(100 + 40 * i, 40);
+            BrickSummoner.summonType0_2(100 + 40 * i, 80);
+            BrickSummoner.summonType1(100 + 40 * i , 120);
+            BrickSummoner.summonType2(100 + 40 * i , 160);
+            BrickSummoner.summonType4(100 + 40 * i , 240);
+            BrickSummoner.summonType5_1(100 + 40 * i , 280);
+            BrickSummoner.summonType5_2(100 + 40 * i , 320);
+            BrickSummoner.summonType6(100 + 40 * i , 360);
+            BrickSummoner.summonType7_1(100 + 40 * i , 400);
+            BrickSummoner.summonType7_2(100 + 40 * i , 440);
+            BrickSummoner.summonType8(100 + 40 * i , 480);
+        }
+        BrickSummoner.summonType3(100 + 40 * 4 , 200);
+//        Map map = Map.load("assets/map/brick_level_2.json");
+//        map.generate();
     }
-
-//        BrickType1 enemy1 =  GameObject.recycleGameObject(BrickType1.class);
-//        enemy1.position.set(300, 200);
-
 
     @Override
     public void clear() {
         GameObject.clearAll();
         Scene.score = 0;
-
     }
 }

@@ -1,14 +1,14 @@
 package game.paddle;
 
 import game.*;
-import game.brick.AbilityBrickType4;
-import game.brick.AbilityBrickType5;
+import game.brick.*;
 import game.physics.BoxCollider;
 import game.physics.Physics;
 import game.power.Rocket;
 import game.renderer.SingleimageRenderer;
 import game.scene.GameOverScene;
 import game.scene.Scene;
+import game.scene.SceneStage1;
 import tklibs.SpriteUtils;
 
 public class Paddle extends GameObject implements Physics {
@@ -31,11 +31,24 @@ public class Paddle extends GameObject implements Physics {
         this.renderer = new SingleimageRenderer(SpriteUtils.loadImage("assets/images/paddle/0.png"));
     }
 
+    public static Paddle getPaddle() {
+        for (int i = 0; i < GameObject.gameObjects.size(); i++){
+            GameObject gameObject = GameObject.gameObjects.get(i);
+            if (gameObject.active && gameObject instanceof Paddle) {
+                return (Paddle)gameObject;
+            }
+        }
+        return null;
+    }
+
     public void fire() {
         if (this.fireCounter.count()) {
-            if (GameWindow.isFirePress) {
-                GameObject.recycleGameObject(Rocket.class).position.set(this.position.clone().addThis(this.renderer.getCurrentImageSize().clone().scaleThis(0.5f)));
-                this.fireCounter.reset();
+            if (SceneStage1.rocketLeft > 0) {
+                if (GameWindow.isFirePress) {
+                    GameObject.recycleGameObject(Rocket.class).position.set(this.position.clone().addThis(this.renderer.getCurrentImageSize().clone().scaleThis(0.5f)));
+                    SceneStage1.rocketLeft -= 1;
+                    this.fireCounter.reset();
+                }
             }
         }
     }
@@ -51,8 +64,15 @@ public class Paddle extends GameObject implements Physics {
     //TODO continue editing
 
     public void hitAb() {
+        GameObject.resolveCollision(AbilityBrickType0_1.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(AbilityBrickType0_2.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(AbilityBrickType3.class, this.getBoxCollider(), true);
         GameObject.resolveCollision(AbilityBrickType4.class, this.getBoxCollider(), true);
-        GameObject.resolveCollision(AbilityBrickType5.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(AbilityBrickType5_1.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(AbilityBrickType5_2.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(AbilityBrickType7_1.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(AbilityBrickType7_2.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(AbilityBrickType8.class, this.getBoxCollider(), true);
     }
 
     private void move() {

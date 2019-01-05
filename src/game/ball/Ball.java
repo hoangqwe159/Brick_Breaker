@@ -2,6 +2,7 @@ package game.ball;
 
 import game.GameObject;
 import game.Setting;
+import game.paddle.Paddle;
 import game.physics.BoxCollider;
 import game.physics.Physics;
 import game.scene.GameOverScene;
@@ -11,6 +12,7 @@ public abstract class Ball extends GameObject implements Physics {
     public BoxCollider boxCollider;
     public int maxVelocity;
     public float thresholdVelocity;
+
     public Ball() {
         this.createRenderer();
         this.createBoxCollider();
@@ -30,10 +32,8 @@ public abstract class Ball extends GameObject implements Physics {
 
     @Override
     public void destroy() {
-        super.destroy();
-        if (GameObject.noBallLeft()) {
-            Scene.signNewScene(new GameOverScene());
-        }
+        this.active = false;
+        Ball.resetBall();
     }
 
     @Override
@@ -54,6 +54,22 @@ public abstract class Ball extends GameObject implements Physics {
 
         else if (this.position.y > Setting.SCREEN_HEIGHT) {
             this.destroy();
+        }
+    }
+
+    public static void resetBall() {
+        if (GameObject.countBall() == 0) {
+            Scene.lives -= 1;
+            if (Scene.lives == 0) {
+                Scene.signNewScene(new GameOverScene());
+            }
+            else {
+                Paddle paddle = Paddle.getPaddle();
+                BallType1 newBall = GameObject.recycleGameObject(BallType1.class);
+                newBall.position.set(paddle.position.clone().addThis(paddle.renderer.getCurrentImageSize().clone().scaleThis(0.5f).x, 0).subtractThis(newBall.renderer.getCurrentImageSize().x / 2, newBall.renderer.getCurrentImageSize().y));
+                newBall.velocity.set(0, 0);
+                BallType1.ballIsReset = true;
+            }
         }
     }
 }

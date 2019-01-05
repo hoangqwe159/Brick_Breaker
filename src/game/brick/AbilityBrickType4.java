@@ -6,6 +6,8 @@ import game.physics.BoxCollider;
 import game.renderer.SingleimageRenderer;
 import tklibs.SpriteUtils;
 
+import java.util.ArrayList;
+
 public class AbilityBrickType4 extends AbilityBrick {
 
     public AbilityBrickType4() {
@@ -31,9 +33,18 @@ public class AbilityBrickType4 extends AbilityBrick {
         for (int i = 0; i < currentSize; i++) {
             GameObject gameObject = GameObject.gameObjects.get(i);
             if (gameObject.active && gameObject instanceof Ball) {
-                GameObject.recycleGameObject(gameObject.getClass()).position.set(gameObject.position);
-                GameObject.gameObjects.get(currentSize).velocity.setAngle((float)(gameObject.velocity.getAngle() + Math.PI / 9));
+                GameObject object = GameObject.recycleGameObject(gameObject.getClass());
+                object.renderer.images = new ArrayList<>(gameObject.renderer.images);
+                object.renderer.sizes = new ArrayList<>(gameObject.renderer.sizes);
+                object.position.set(gameObject.position);
+                object.velocity.setLength(gameObject.velocity.getLength()).setAngle((float)(gameObject.velocity.getAngle() + Math.PI / 9));
             }
         }
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        this.velocity.setY(10);
     }
 }

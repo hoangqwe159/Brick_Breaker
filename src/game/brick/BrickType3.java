@@ -23,7 +23,6 @@ public class BrickType3 extends Brick {
     @Override
     public void destroy() {
         super.destroy();
-        AbilityBrickType3 ability3 = GameObject.recycleGameObject(AbilityBrickType3.class);
-        ability3.position.set(0, 300);
+        GameObject.recycleGameObject(AbilityBrickType3.class).position.set(0, 300);
     }
 }

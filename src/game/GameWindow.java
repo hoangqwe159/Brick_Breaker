@@ -11,6 +11,7 @@ public class GameWindow extends JFrame {
     public static boolean isLeftPress;
     public static boolean isRightPress;
     public static boolean isFirePress;
+    public static boolean isNewBallPress;
     public static boolean isAnyKeyPress;
 
 
@@ -42,21 +43,21 @@ public class GameWindow extends JFrame {
                 if (e.getKeyCode() == KeyEvent.VK_W){
                     GameWindow.isUpPress = true;
                 }
-                else if (e.getKeyCode() == KeyEvent.VK_S){
+                if (e.getKeyCode() == KeyEvent.VK_S){
                     GameWindow.isDownPress = true;
                 }
-                else if (e.getKeyCode() == KeyEvent.VK_A){
+                if (e.getKeyCode() == KeyEvent.VK_A){
                     GameWindow.isLeftPress = true;
                 }
-                else if (e.getKeyCode() == KeyEvent.VK_D){
+                if (e.getKeyCode() == KeyEvent.VK_D){
                     GameWindow.isRightPress = true;
                 }
                 if (e.getKeyCode() == KeyEvent.VK_SPACE){
                     GameWindow.isFirePress = true;
                 }
-
-
-
+                if (e.getKeyCode() == KeyEvent.VK_N) {
+                    GameWindow.isNewBallPress = true;
+                }
             }
 
             @Override
@@ -65,7 +66,7 @@ public class GameWindow extends JFrame {
                 if (e.getKeyCode() == KeyEvent.VK_W){
                     GameWindow.isUpPress = false;
                 }
-                else if (e.getKeyCode() == KeyEvent.VK_S){
+                if (e.getKeyCode() == KeyEvent.VK_S){
                     GameWindow.isDownPress = false;
                 }
                 if (e.getKeyCode() == KeyEvent.VK_D){
@@ -76,6 +77,9 @@ public class GameWindow extends JFrame {
                 }
                 if (e.getKeyCode() == KeyEvent.VK_SPACE){
                     GameWindow.isFirePress = false;
+                }
+                if (e.getKeyCode() == KeyEvent.VK_N) {
+                    GameWindow.isNewBallPress = false;
                 }
             }
         });

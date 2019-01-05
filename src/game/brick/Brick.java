@@ -54,4 +54,15 @@ public abstract class Brick extends GameObject implements Physics {
         explosion.position.set(this.position.clone().addThis(this.renderer.getCurrentImageSize().scaleThis(0.5f)));
         Scene.score += 50;
     }
+
+    public static void destroyAllBricks(BoxCollider boxCollider) {
+        for (int i = 0; i < gameObjects.size(); i++) {
+            GameObject object = gameObjects.get(i);
+            if (object.active
+                    && object instanceof Brick
+                    && ((Brick)object).getBoxCollider().isColliding(boxCollider)) {
+                object.destroy();
+            }
+        }
+    }
 }

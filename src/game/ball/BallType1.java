@@ -1,9 +1,7 @@
 package game.ball;
 
-import game.brick.AbilityBrickType3;
-import game.brick.BrickType1;
-import game.brick.BrickType2;
-import game.brick.BrickType3;
+import game.GameWindow;
+import game.brick.*;
 import game.GameObject;
 import game.physics.BoxCollider;
 import game.paddle.Paddle;
@@ -12,8 +10,10 @@ import tklibs.SpriteUtils;
 
 
 public class BallType1 extends Ball {
+    public static boolean ballIsReset;
 
     public BallType1() {
+        BallType1.ballIsReset = false;
         this.maxVelocity = 10;
         this.thresholdVelocity = 0.2f;
         this.position.set(360, 400);
@@ -57,18 +57,42 @@ public class BallType1 extends Ball {
 
     @Override
     public void run() {
-        this.limitVelocity();
         super.run();
+        this.limitVelocity();
+        this.launchNewBall();
 
         GameObject.resolveCollision(Paddle.class, this.getBoxCollider());
+        GameObject.resolveCollision(BrickType0_1.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(BrickType0_2.class, this.getBoxCollider(), true);
         GameObject.resolveCollision(BrickType1.class, this.getBoxCollider(), true);
         GameObject.resolveCollision(BrickType2.class, this.getBoxCollider());
         GameObject.resolveCollision(BrickType3.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(BrickType4.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(BrickType5_1.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(BrickType5_2.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(BrickType6.class, this.getBoxCollider());
+        GameObject.resolveCollision(BrickType7_1.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(BrickType7_2.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(BrickType8.class, this.getBoxCollider(), true);
+
 
         AbilityBrickType3 ab3 = GameObject.findIntercepts(AbilityBrickType3.class, this.boxCollider);
         if (ab3 != null) {
             this.destroy();
         }
         this.limitGameObjectPosition();
+    }
+
+    public void launchNewBall() {
+        if (BallType1.ballIsReset) {
+            if (GameWindow.isNewBallPress) {
+                BallType1.ballIsReset = false;
+                this.velocity.set(0, -5);
+            }
+            if (GameWindow.isLeftPress || GameWindow.isRightPress) {
+                Paddle paddle = Paddle.getPaddle();
+                this.position.set(paddle.position.clone().addX(paddle.renderer.getCurrentImageSize().x / 2).subtractThis(this.renderer.getCurrentImageSize().x / 2, this.renderer.getCurrentImageSize().y));
+            }
+        }
     }
 }
