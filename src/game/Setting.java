@@ -8,7 +8,7 @@ public class Setting {
     public static int SCREEN_WIDTH = 600;
     public static int SCREEN_HEIGHT = 800;
     public static int PADDLE_START_POSITION_X = 400;
-    public static int PADDLE_START_POSITION_Y = 570;
+    public static int PADDLE_START_POSITION_Y = 750;
     public static Vector2D PADDLE_VECLOCITY_UP = new Vector2D(0, -7);
     public static Vector2D PADDLE_VECLOCITY_DOWN = new Vector2D(0, 7);
     public static Vector2D PADDLE_VECLOCITY_LEFT = new Vector2D(-7, 0);

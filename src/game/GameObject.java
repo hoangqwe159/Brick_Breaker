@@ -141,15 +141,22 @@ public class GameObject {
     }
 
     public static <E extends GameObject> E resolveCollision(Class<E> clazz, BoxCollider boxCollider) {
-        return GameObject.resolveCollision(clazz, boxCollider, false);
+        return GameObject.resolveCollision(clazz, boxCollider, false, true);
     }
 
     public static <E extends GameObject> E resolveCollision(Class<E> clazz, BoxCollider boxCollider, boolean destroy) {
+        return GameObject.resolveCollision(clazz, boxCollider, destroy, true);
+    }
+
+    public static <E extends GameObject> E resolveCollision(Class<E> clazz, BoxCollider boxCollider, boolean destroy, boolean trigger) {
         E object = GameObject.findIntercepts(clazz, boxCollider);
         if (object != null) {
             ((Physics) object).getBoxCollider().resolveCollision(boxCollider);
             if (destroy) {
                 object.destroy();
+            }
+            if (trigger) {
+                object.triggerSpecialEffectWhenHit();
             }
         }
         return object;
@@ -190,6 +197,9 @@ public class GameObject {
         else if (this.position.y > Setting.SCREEN_HEIGHT - this.renderer.getCurrentImageSize().y) {
             this.position.set(this.position.x, Setting.SCREEN_HEIGHT - this.renderer.getCurrentImageSize().y);
         }
+    }
+
+    public void triggerSpecialEffectWhenHit() {
     }
 
     public void destroy() {

@@ -7,11 +7,8 @@ import game.brick.BrickType3;
 import game.GameObject;
 import game.physics.BoxCollider;
 import game.paddle.Paddle;
-import game.renderer.AnimationRenderer;
 import game.renderer.SingleimageRenderer;
 import tklibs.SpriteUtils;
-
-import java.util.ArrayList;
 
 
 public class BallType1 extends Ball {

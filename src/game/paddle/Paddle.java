@@ -1,8 +1,8 @@
 package game.paddle;
 
 import game.*;
-import game.ball.Ball;
 import game.brick.AbilityBrickType4;
+import game.brick.AbilityBrickType5;
 import game.physics.BoxCollider;
 import game.physics.Physics;
 import game.power.Rocket;
@@ -19,9 +19,9 @@ public class Paddle extends GameObject implements Physics {
     public Paddle() {
         // game.paddle.paddle.playerName; // co the goi y het ben canvas
         super();
-        this.fireCounter = new FrameCounter(0);
+        this.fireCounter = new FrameCounter(60);
         this.createRenderer();
-        this.position.set(400, 570);
+        this.position.set(Setting.PADDLE_START_POSITION_X, Setting.PADDLE_START_POSITION_Y);
         this.anchor.set(0f,0f);
         this.createBoxCollider();
         GameObject.midLayer.add(this);
@@ -51,22 +51,8 @@ public class Paddle extends GameObject implements Physics {
     //TODO continue editing
 
     public void hitAb() {
-        AbilityBrickType4 ab4 = GameObject.findIntercepts(AbilityBrickType4.class, this.getBoxCollider());
-        if (ab4 != null){
-            ab4.destroy();
-            ab4.position.set(0, 0);
-            int currentSize = GameObject.gameObjects.size();
-            for (int i = 0; i < currentSize; i++) {
-                GameObject gameObject = GameObject.gameObjects.get(i);
-                if (gameObject.active && gameObject instanceof Ball) {
-                    for (int j = 0; j < 2; j++) {
-                        GameObject.recycleGameObject(gameObject.getClass()).position.set(gameObject.position);
-                        float angle = gameObject.velocity.getAngle();
-                        GameObject.gameObjects.get(currentSize + j).velocity.setAngle((float)(angle + (2 * j - 1) * Math.PI / 9));
-                    }
-                }
-            }
-        }
+        GameObject.resolveCollision(AbilityBrickType4.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(AbilityBrickType5.class, this.getBoxCollider(), true);
     }
 
     private void move() {
