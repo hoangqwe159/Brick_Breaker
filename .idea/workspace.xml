@@ -2,45 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e789ea5b-f1df-4876-b631-e2bd3e188a60" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/game/brick/AbilityBrickType5_2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/brick/BrickType5_1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/brick/BrickType5_2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/brick/BrickType9_2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/explosion/Particle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/menu/RocketMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/scene/SceneManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/scene/SceneStage10.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/scene/SceneStage2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/scene/SceneStage3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/scene/SceneStage4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/scene/SceneStage5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/scene/SceneStage6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/scene/SceneStage7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/scene/SceneStage8.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/scene/SceneStage9.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/explosion/explosion_type_I/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/explosion/explosion_type_I/0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/explosion/explosion_type_I/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/explosion/explosion_type_I/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/explosion/explosion_type_I/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/explosion/explosion_type_I/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/explosion/explosion_type_I/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/explosion/explosion_type_I/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/explosion/explosion_type_I/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/explosion/explosion_type_I/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/explosion/explosion_type_I/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/explosion/explosion_type_I/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/enemy/0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/enemy/4/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/enemy/5/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/enemy/5/5_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/enemy/pacman_brick.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/enemy/unbreakable_brick.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/GameObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/GameWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/GameWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/GameWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/GameWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/ball/Ball.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/ball/Ball.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/ball/BallType1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/ball/BallType1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/brick/AbilityBrickType4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/brick/AbilityBrickType4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/brick/AbilityBrickType5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/ball/BallType2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/ball/BallType2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/brick/AbilityBrickType8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/brick/AbilityBrickType8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/brick/Brick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/brick/Brick.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/brick/BrickSummoner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/brick/BrickSummoner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/brick/BrickType3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/brick/BrickType3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/brick/BrickType4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/brick/BrickType4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/brick/BrickType5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/menu/LivesMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/menu/LivesMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/menu/ScoreMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/menu/ScoreMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/paddle/Paddle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/paddle/Paddle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/scene/Scene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/scene/Scene.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/scene/SceneStage1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/scene/SceneStage1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brick_Breaker/game/scene/WelcomeScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brick_Breaker/game/scene/WelcomeScene.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/ball/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ball/Ball.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/ball/BallType1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ball/BallType1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/brick/AbilityBrickType4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/brick/AbilityBrickType4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/brick/AbilityBrickType5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/brick/AbilityBrickType5_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/ball/BallType2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ball/BallType2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/brick/AbilityBrickType8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/brick/AbilityBrickType8.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/brick/Brick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/brick/Brick.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/brick/BrickSummoner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/brick/BrickSummoner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/brick/BrickType3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/brick/BrickType3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/brick/BrickType4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/brick/BrickType4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/brick/BrickType5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/menu/LivesMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/menu/LivesMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/menu/ScoreMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/menu/ScoreMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/paddle/Paddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/paddle/Paddle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/scene/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/scene/Scene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/scene/SceneStage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/scene/SceneStage1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/scene/WelcomeScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/scene/WelcomeScene.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,104 +56,94 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/GameObject.java">
+        <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="154" column="23" selection-start-line="154" selection-start-column="23" selection-end-line="154" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="432">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/brick/AbilityBrickType0_1.java">
+        <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="e#643#644#0" expanded="true" />
-                <element signature="e#675#676#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="108">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/brick/AbilityBrickType0_2.java">
+        <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage4.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="100" selection-start-line="15" selection-start-column="100" selection-end-line="15" selection-end-column="100" />
+            <state relative-caret-position="351">
+              <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage5.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage6.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage7.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage8.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage9.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage10.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="44" column="46" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
+            <state relative-caret-position="356">
+              <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/ball/BallType1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="87" column="34" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/ball/BallType2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/ball/Ball.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/brick/AbilityBrickType7_1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="29" column="96" selection-start-line="29" selection-start-column="96" selection-end-line="29" selection-end-column="96" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/brick/AbilityBrickType7_2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/brick/AbilityBrickType8.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -177,6 +171,7 @@
     </replaceStrings>
     <dirStrings>
       <dir>D:\Brick_Breaker\Brick_Breaker</dir>
+      <dir>D:\Brick_Breaker\Brick_Breaker\src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -185,57 +180,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/game/Brick/AbilityBrickType3.java" />
-        <option value="$PROJECT_DIR$/src/game/brick/AbilityBrick.java" />
-        <option value="$PROJECT_DIR$/src/Game/Scene/BackgroundGameOverScene.java" />
-        <option value="$PROJECT_DIR$/src/game/ball/Rocket.java" />
-        <option value="$PROJECT_DIR$/src/game/power/PowerBall.java" />
-        <option value="$PROJECT_DIR$/src/game/brick/AbilityBrickType3.java" />
-        <option value="$PROJECT_DIR$/src/game/physics/BoxCollider.java" />
-        <option value="$PROJECT_DIR$/src/tklibs/Vector2D.java" />
-        <option value="$PROJECT_DIR$/src/game/FrameCounter.java" />
-        <option value="$PROJECT_DIR$/src/game/physics/Velocity.java" />
-        <option value="$PROJECT_DIR$/src/game/physics/Acceleration.java" />
-        <option value="$PROJECT_DIR$/src/game/scene/WelcomeScence.java" />
-        <option value="$PROJECT_DIR$/src/game/Background.java" />
-        <option value="$PROJECT_DIR$/src/game/Maps/Layer.java" />
-        <option value="$PROJECT_DIR$/src/game/maps/Layer.java" />
-        <option value="$PROJECT_DIR$/src/game/brick/BrickType2.java" />
-        <option value="$PROJECT_DIR$/src/game/brick/BrickType1.java" />
-        <option value="$PROJECT_DIR$/src/game/power/Rocket.java" />
-        <option value="$PROJECT_DIR$/src/game/Setting.java" />
-        <option value="$PROJECT_DIR$/src/game/utils/Utils.java" />
         <option value="$PROJECT_DIR$/src/game/renderer/Renderer.java" />
         <option value="$PROJECT_DIR$/src/game/renderer/SingleimageRenderer.java" />
         <option value="$PROJECT_DIR$/src/game/renderer/AnimationRenderer.java" />
         <option value="$PROJECT_DIR$/src/game/maps/Map.java" />
         <option value="$PROJECT_DIR$/src/tklibs/ImageProcessing.java" />
-        <option value="$PROJECT_DIR$/src/game/brick/Brick.java" />
         <option value="$PROJECT_DIR$/src/game/brick/BrickType5.java" />
         <option value="$PROJECT_DIR$/src/game/brick/BrickType3.java" />
         <option value="$PROJECT_DIR$/src/game/brick/BrickType4.java" />
         <option value="$USER_HOME$/Downloads/Paddle.java" />
         <option value="$USER_HOME$/Downloads/GameWindow.java" />
-        <option value="$PROJECT_DIR$/src/game/scene/Scene.java" />
-        <option value="$PROJECT_DIR$/src/game/GameObject.java" />
         <option value="$PROJECT_DIR$/src/game/brick/AbilityBrickType5.java" />
         <option value="$PROJECT_DIR$/src/game/brick/AbilityBrickType5_2.java" />
         <option value="$PROJECT_DIR$/src/game/brick/BrickType5_2.java" />
         <option value="$PROJECT_DIR$/src/game/brick/AbilityBrickType4.java" />
-        <option value="$PROJECT_DIR$/src/game/brick/BrickSummoner.java" />
         <option value="$PROJECT_DIR$/src/game/brick/BrickType0_1.java" />
         <option value="$PROJECT_DIR$/src/game/brick/BrickType0_2.java" />
-        <option value="$PROJECT_DIR$/src/game/ball/BallType1.java" />
-        <option value="$PROJECT_DIR$/src/game/paddle/Paddle.java" />
         <option value="$PROJECT_DIR$/src/game/GameWindow.java" />
         <option value="$PROJECT_DIR$/src/game/ball/Ball.java" />
-        <option value="$PROJECT_DIR$/src/game/ball/BallType2.java" />
         <option value="$PROJECT_DIR$/src/game/brick/AbilityBrickType0_1.java" />
         <option value="$PROJECT_DIR$/src/game/brick/AbilityBrickType0_2.java" />
         <option value="$PROJECT_DIR$/src/game/brick/AbilityBrickType7_1.java" />
         <option value="$PROJECT_DIR$/src/game/brick/AbilityBrickType7_2.java" />
+        <option value="$PROJECT_DIR$/src/game/explosion/ParticleExplosion.java" />
+        <option value="$PROJECT_DIR$/src/game/scene/WelcomeScene.java" />
+        <option value="$PROJECT_DIR$/src/game/GameObject.java" />
+        <option value="$PROJECT_DIR$/src/game/explosion/Particle.java" />
+        <option value="$PROJECT_DIR$/src/game/paddle/Paddle.java" />
+        <option value="$PROJECT_DIR$/src/game/ball/BallType1.java" />
+        <option value="$PROJECT_DIR$/src/game/brick/BrickSummoner.java" />
+        <option value="$PROJECT_DIR$/src/game/brick/AbilityBrickType9_1.java" />
+        <option value="$PROJECT_DIR$/src/game/brick/BrickType9_2.java" />
+        <option value="$PROJECT_DIR$/src/game/brick/BrickType9_1.java" />
+        <option value="$PROJECT_DIR$/src/game/ball/BallType2.java" />
         <option value="$PROJECT_DIR$/src/game/brick/AbilityBrickType8.java" />
+        <option value="$PROJECT_DIR$/src/game/brick/AbilityBrickType9_2.java" />
+        <option value="$PROJECT_DIR$/src/game/brick/Brick.java" />
+        <option value="$PROJECT_DIR$/src/game/menu/ScoreMenu.java" />
+        <option value="$PROJECT_DIR$/src/game/menu/LivesMenu.java" />
+        <option value="$PROJECT_DIR$/src/game/menu/RocketMenu.java" />
+        <option value="$PROJECT_DIR$/src/game/scene/SceneManager.java" />
+        <option value="$PROJECT_DIR$/src/game/scene/Scene.java" />
         <option value="$PROJECT_DIR$/src/game/scene/SceneStage1.java" />
+        <option value="$PROJECT_DIR$/src/game/scene/SceneStage3.java" />
+        <option value="$PROJECT_DIR$/src/game/scene/SceneStage2.java" />
+        <option value="$PROJECT_DIR$/src/game/scene/SceneStage4.java" />
+        <option value="$PROJECT_DIR$/src/game/scene/SceneStage5.java" />
+        <option value="$PROJECT_DIR$/src/game/scene/SceneStage6.java" />
+        <option value="$PROJECT_DIR$/src/game/scene/SceneStage7.java" />
+        <option value="$PROJECT_DIR$/src/game/scene/SceneStage8.java" />
+        <option value="$PROJECT_DIR$/src/game/scene/SceneStage9.java" />
+        <option value="$PROJECT_DIR$/src/game/scene/SceneStage10.java" />
       </list>
     </option>
   </component>
@@ -245,7 +240,9 @@
     <option name="width" value="1025" />
     <option name="height" value="690" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -281,7 +278,7 @@
               <item name="Brick_Breaker" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="ball" type="462c0819:PsiDirectoryNode" />
+              <item name="Backup" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Brick_Breaker" type="b2602c69:ProjectViewProjectNode" />
@@ -364,7 +361,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546708283222" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546718932972" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -373,6 +370,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="game.brick" />
       <recent name="Game.Brick" />
       <recent name="Game.Ball" />
     </key>
@@ -438,18 +436,18 @@
       <workItem from="1546624776346" duration="3736000" />
       <workItem from="1546662231225" duration="2629000" />
       <workItem from="1546670028829" duration="597000" />
-      <workItem from="1546672845314" duration="30109000" />
+      <workItem from="1546672845314" duration="40914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94823000" />
+    <option name="totallyTimeSpent" value="105628000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2979744" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2979744" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -458,7 +456,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -484,274 +482,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/game/utils/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Java/src/tklibs/ImageProcessing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.desktop/java/awt/image/BufferedImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="500" selection-start-line="500" selection-end-line="500" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/renderer/AnimationRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="38" column="29" lean-forward="true" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/maps/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/FrameCounter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/renderer/SingleimageRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-          <folding>
-            <element signature="e#801#802#0" expanded="true" />
-            <element signature="e#841#842#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/renderer/Renderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="372" column="18" selection-start-line="372" selection-start-column="18" selection-end-line="372" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tklibs/ImageProcessing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1674">
-          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/brick/Brick.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/BrickType7_1.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tklibs/SpriteUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Paddle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1143">
-          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/GameWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="82" column="17" lean-forward="true" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/GameObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1837">
-          <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Background.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-243" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/Background.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="13" column="84" selection-start-line="13" selection-start-column="84" selection-end-line="13" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/SceneStage1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1197">
-          <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Scene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/BallType1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="90" column="5" lean-forward="true" selection-start-line="77" selection-start-column="4" selection-end-line="90" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Ball.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="73" column="5" lean-forward="true" selection-start-line="61" selection-start-column="4" selection-end-line="73" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/brick/BrickType8.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/BrickType0.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/brick/BrickType3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/brick/BrickType4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/brick/BrickType6.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/brick/AbilityBrickType5_1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="42" column="17" selection-end-line="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/brick/AbilityBrickType5_2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="40" column="165" selection-start-line="40" selection-start-column="165" selection-end-line="40" selection-end-column="165" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/brick/BrickType5_1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="25" column="61" selection-end-line="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/brick/BrickType5_2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/brick/AbilityBrickType3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="38" column="100" lean-forward="true" selection-start-line="38" selection-start-column="100" selection-end-line="38" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/brick/AbilityBrickType4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/brick/BrickSummoner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/brick/BrickType0_1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -773,68 +503,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/paddle/Paddle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-324">
-          <caret line="75" column="5" lean-forward="true" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/menu/LivesMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-162">
-          <caret line="15" column="15" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/GameWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
           <caret line="60" column="13" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/scene/Scene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/GameObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="154" column="23" selection-start-line="154" selection-start-column="23" selection-end-line="154" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/ball/BallType1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="87" column="34" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/ball/Ball.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/ball/BallType2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -856,13 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/brick/AbilityBrickType7_1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="29" column="96" selection-start-line="29" selection-start-column="96" selection-end-line="29" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/brick/AbilityBrickType7_2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -870,20 +535,320 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/brick/AbilityBrickType8.java">
+    <entry file="file://$PROJECT_DIR$/src/game/renderer/AnimationRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tklibs/Vector2D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="89" column="20" selection-start-line="89" selection-start-column="20" selection-end-line="89" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/explosion/ParticleExplosion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/ball/Ball.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-594">
+          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/time/lifeTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/GameObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1341">
+          <caret line="200" column="5" selection-start-line="200" selection-start-column="5" selection-end-line="200" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/explosion/Particle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="963">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+            <element signature="e#462#463#0" expanded="true" />
+            <element signature="e#512#513#0" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1073#1074#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/brick/BrickType6.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/brick/AbilityBrickType7_1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="29" column="96" selection-start-line="29" selection-start-column="96" selection-end-line="29" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/ball/BallType1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="77" column="85" lean-forward="true" selection-start-line="77" selection-start-column="85" selection-end-line="77" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/brick/BrickSummoner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/ability/ab0.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/enemy/7_2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/enemy/8.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/enemy/9_1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/enemy/9_2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/enemy/abilty_E7/0.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/brick/AbilityBrickType9_1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <caret line="16" column="96" selection-start-line="16" selection-start-column="96" selection-end-line="16" selection-end-column="96" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/ball/BallType2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/brick/AbilityBrickType9_2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/brick/BrickType9_1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="93" selection-start-line="15" selection-start-column="93" selection-end-line="15" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/brick/BrickType9_2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="15" column="94" selection-start-line="15" selection-start-column="94" selection-end-line="15" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/brick/AbilityBrickType8.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/brick/Brick.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/menu/ScoreMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="22" column="5" lean-forward="true" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/menu/LivesMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="33" column="90" selection-start-line="33" selection-start-column="90" selection-end-line="33" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/menu/RocketMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/scene/BackgroundGameOverScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/paddle/Paddle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/scene/SceneManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/GameCanvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/scene/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/scene/WelcomeScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/scene/BackgroundWelcomeScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="44" column="46" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
+        <state relative-caret-position="356">
+          <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage6.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage7.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage8.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage9.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/scene/SceneStage10.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>

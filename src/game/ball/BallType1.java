@@ -74,6 +74,8 @@ public class BallType1 extends Ball {
         GameObject.resolveCollision(BrickType7_1.class, this.getBoxCollider(), true);
         GameObject.resolveCollision(BrickType7_2.class, this.getBoxCollider(), true);
         GameObject.resolveCollision(BrickType8.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(BrickType9_1.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(BrickType9_2.class, this.getBoxCollider(), true);
 
 
         AbilityBrickType3 ab3 = GameObject.findIntercepts(AbilityBrickType3.class, this.boxCollider);

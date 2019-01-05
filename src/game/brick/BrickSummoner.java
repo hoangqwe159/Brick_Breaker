@@ -41,4 +41,10 @@ public class BrickSummoner extends GameObject{
     public static void summonType8(int x, int y) {
         GameObject.recycleGameObject(BrickType8.class).position.set(x, y);
     }
+    public static void summonType9_1(int x, int y) {
+        GameObject.recycleGameObject(BrickType9_1.class).position.set(x, y);
+    }
+    public static void summonType9_2(int x, int y) {
+        GameObject.recycleGameObject(BrickType9_2.class).position.set(x, y);
+    }
 }

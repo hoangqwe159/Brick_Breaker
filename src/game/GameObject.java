@@ -3,10 +3,12 @@ import java.awt.*;
 import java.util.ArrayList;
 
 import game.ball.Ball;
+import game.explosion.Particle;
 import game.physics.BoxCollider;
 import game.physics.Physics;
 
 import game.renderer.Renderer;
+import tklibs.SpriteUtils;
 import tklibs.Vector2D;
 
 
@@ -59,7 +61,7 @@ public class GameObject {
             return inactiveGameObject;
         }
         try {
-            E gameObject = clazz.newInstance(); //new E()
+            E gameObject = clazz.getConstructor().newInstance(); //new E()
             gameObjects.add(gameObject);
             return gameObject;
         } catch (Exception ex) {

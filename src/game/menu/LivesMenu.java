@@ -17,20 +17,20 @@ public class LivesMenu extends GameObject {
                 , Color.white
                 , Setting.FONT_LG);
         this.renderer = this.livesRenderer;
-        this.position.set(500, 50);
+        this.position.set(300, 50);
         GameObject.midLayer.add(this);
-        this.lifeImage = SpriteUtils.loadImage("assets/images/background/score.png");
+        this.lifeImage = SpriteUtils.loadImage("assets/images/background/lives.png");
     }
 
     @Override
     public void run() {
         super.run();
-        this.livesRenderer.text = Scene.score + "";
+        this.livesRenderer.text = Scene.lives + "";
     }
 
     @Override
     public void render(Graphics g) {
         super.render(g); //this.renderer.render() ve drawString
-        g.drawImage(this.lifeImage, (int) this.position.x - 150 , (int) this.position.y - 35, null);
+        g.drawImage(this.lifeImage, (int) this.position.x - 20 , (int) this.position.y -15, null);
     }
 }

@@ -73,6 +73,8 @@ public class Paddle extends GameObject implements Physics {
         GameObject.resolveCollision(AbilityBrickType7_1.class, this.getBoxCollider(), true);
         GameObject.resolveCollision(AbilityBrickType7_2.class, this.getBoxCollider(), true);
         GameObject.resolveCollision(AbilityBrickType8.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(AbilityBrickType9_1.class, this.getBoxCollider(), true);
+        GameObject.resolveCollision(AbilityBrickType9_2.class, this.getBoxCollider(), true);
     }
 
     private void move() {

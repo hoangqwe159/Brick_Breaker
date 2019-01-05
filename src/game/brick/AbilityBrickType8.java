@@ -31,6 +31,7 @@ public class AbilityBrickType8 extends AbilityBrick {
             GameObject gameObject = GameObject.gameObjects.get(i);
             if (gameObject.active && gameObject instanceof Ball) {
                 BallType2 ballType2 = GameObject.recycleGameObject(BallType2.class);
+                ballType2.frameCounter.reset();
                 ballType2.position.set(gameObject.position);
                 ballType2.velocity.set(gameObject.velocity);
                 gameObject.destroy();
