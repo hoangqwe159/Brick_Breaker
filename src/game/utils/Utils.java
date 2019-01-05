@@ -1,4 +1,4 @@
-package Game.utils;
+package game.utils;
 
 import java.io.File;
 import java.io.FileInputStream;

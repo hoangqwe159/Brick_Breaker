@@ -1,6 +1,6 @@
 package game.maps;
 
-import Game.utils.Utils;
+import game.utils.Utils;
 import com.google.gson.Gson;
 
 import java.util.List;

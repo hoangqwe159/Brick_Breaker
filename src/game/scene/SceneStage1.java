@@ -4,6 +4,7 @@ import game.Background;
 
 
 import game.ball.BallType1;
+import game.brick.AbilityBrickType5;
 import game.maps.Map;
 import game.power.Rocket;
 import game.brick.AbilityBrickType4;
@@ -30,8 +31,7 @@ public class SceneStage1 extends Scene {
         GameObject.recycleGameObject(BackgroundMenu.class);
         GameObject.recycleGameObject(ScoreMenu.class);
         GameObject.recycleGameObject(BallType1.class);
-        GameObject.recycleGameObject(AbilityBrickType4.class);
-        GameObject.recycleGameObject(Rocket.class);
+        GameObject.recycleGameObject(AbilityBrickType5.class);
 //        BrickSummoner.summonType1(100 + 80 * 1 , 100 + 40 * 1);
 //        BrickSummoner.summonType2(100 + 80 * 2 , 100 + 40 * 1);
         //       BrickSummoner.summonType3(0 , 100 + 40 * 1);

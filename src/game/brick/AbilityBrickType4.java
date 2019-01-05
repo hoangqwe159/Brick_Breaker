@@ -31,11 +31,8 @@ public class AbilityBrickType4 extends AbilityBrick {
         for (int i = 0; i < currentSize; i++) {
             GameObject gameObject = GameObject.gameObjects.get(i);
             if (gameObject.active && gameObject instanceof Ball) {
-                for (int j = 0; j < 2; j++) {
-                    GameObject.recycleGameObject(gameObject.getClass()).position.set(gameObject.position);
-                    float angle = gameObject.velocity.getAngle();
-                    GameObject.gameObjects.get(currentSize + j).velocity.setAngle((float)(angle + (2 * j - 1) * Math.PI / 9));
-                }
+                GameObject.recycleGameObject(gameObject.getClass()).position.set(gameObject.position);
+                GameObject.gameObjects.get(currentSize).velocity.setAngle((float)(gameObject.velocity.getAngle() + Math.PI / 9));
             }
         }
     }

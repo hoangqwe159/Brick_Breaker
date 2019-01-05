@@ -9,7 +9,6 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class AnimationRenderer<render> extends Renderer {
-    ArrayList<BufferedImage> images;
     int currentImageIndex;
     boolean isOnce;
     FrameCounter nextImageCounter;
@@ -36,6 +35,7 @@ public class AnimationRenderer<render> extends Renderer {
     public AnimationRenderer(ArrayList<BufferedImage> images
             , boolean isOnce
             , int nextImageCount) {
+        this.originalImages = images;
         this.images = images;
         this.sizes = new ArrayList<>();
         for (int i = 0; i < this.images.size(); i++) {

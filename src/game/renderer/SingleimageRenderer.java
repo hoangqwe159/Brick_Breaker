@@ -8,18 +8,20 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class SingleimageRenderer extends Renderer {
-    BufferedImage image;
 
     public SingleimageRenderer(BufferedImage image) {
-        this.image = image;
+        this.originalImages = new ArrayList<>();
+        this.images = new ArrayList<>();
+        this.originalImages.add(image);
+        this.images.add(image);
         this.sizes = new ArrayList<>();
         this.sizes.add(new Vector2D(image.getWidth(), image.getHeight()));
     }
     @Override
     public void render(Graphics g, GameObject master) {
-        g.drawImage(this.image
-                , (int) (master.position.x - this.image.getWidth() * master.anchor.x)
-                , (int) (master.position.y - this.image.getHeight() * master.anchor.y)
+        g.drawImage(this.images.get(0)
+                , (int) (master.position.x - this.images.get(0).getWidth() * master.anchor.x)
+                , (int) (master.position.y - this.images.get(0).getHeight() * master.anchor.y)
                 , null);
     }
 
