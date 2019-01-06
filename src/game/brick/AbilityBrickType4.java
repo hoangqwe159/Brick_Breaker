@@ -33,7 +33,7 @@ public class AbilityBrickType4 extends AbilityBrick {
         for (int i = 0; i < currentSize; i++) {
             GameObject gameObject = GameObject.gameObjects.get(i);
             if (gameObject.active && gameObject instanceof Ball) {
-                GameObject object = GameObject.recycleGameObject(gameObject.getClass());
+                Ball object = (Ball)GameObject.recycleGameObject(gameObject.getClass());
                 object.renderer.images = new ArrayList<>(gameObject.renderer.images);
                 object.renderer.sizes = new ArrayList<>(gameObject.renderer.sizes);
                 object.position.set(gameObject.position);

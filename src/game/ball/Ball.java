@@ -7,6 +7,9 @@ import game.physics.BoxCollider;
 import game.physics.Physics;
 import game.scene.GameOverScene;
 import game.scene.Scene;
+import tklibs.Vector2D;
+
+import java.util.ArrayList;
 
 public abstract class Ball extends GameObject implements Physics {
     public BoxCollider boxCollider;
@@ -33,6 +36,11 @@ public abstract class Ball extends GameObject implements Physics {
     @Override
     public void destroy() {
         this.active = false;
+        this.renderer.images = new ArrayList<>(this.renderer.originalImages);
+        this.renderer.sizes.clear();
+        for (int i = 0; i < this.renderer.images.size(); i++) {
+            this.renderer.sizes.add(new Vector2D(this.renderer.images.get(i).getWidth(), this.renderer.images.get(i).getHeight()));
+        }
         Ball.resetBall();
     }
 

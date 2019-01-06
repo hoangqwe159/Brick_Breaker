@@ -57,6 +57,6 @@ public class SceneStage1 extends Scene {
     @Override
     public void clear() {
         GameObject.clearAll();
-        Scene.signNewScene(new SceneStage2());
+//        Scene.signNewScene(new SceneStage2());
     }
 }

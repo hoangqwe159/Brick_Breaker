@@ -29,7 +29,7 @@ public class Particle extends GameObject implements Physics {
         this.velocity.setLength(random.nextFloat() * maxVelocity).setAngle((float)(random.nextFloat() * Math.PI * 2));
         this.position.set(startingPosition);
         this.active = isActive;
-        this.lifeTime = new FrameCounter(45);
+        this.lifeTime = new FrameCounter(random.nextInt(51) + 20);
         this.createRenderer();
         this.createBoxCollider();
         GameObject.midLayer.add(this);

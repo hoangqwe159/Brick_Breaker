@@ -91,7 +91,7 @@ public class BallType1 extends Ball {
                 BallType1.ballIsReset = false;
                 this.velocity.set(0, -5);
             }
-            if (GameWindow.isLeftPress || GameWindow.isRightPress) {
+            else if (GameWindow.isLeftPress || GameWindow.isRightPress) {
                 Paddle paddle = Paddle.getPaddle();
                 this.position.set(paddle.position.clone().addX(paddle.renderer.getCurrentImageSize().x / 2).subtractThis(this.renderer.getCurrentImageSize().x / 2, this.renderer.getCurrentImageSize().y));
             }

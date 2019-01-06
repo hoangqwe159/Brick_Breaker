@@ -76,7 +76,7 @@ public class GameObject {
         botLayer.clear();
     }
     public static void runAll() {
-        System.out.println(gameObjects.size());
+        System.out.println(GameObject.countBall());
         for (int i = 0; i < gameObjects.size(); i++) {
             GameObject gameObject = gameObjects.get(i);
             if (gameObject.active) {

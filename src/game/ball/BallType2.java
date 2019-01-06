@@ -17,9 +17,9 @@ public class BallType2 extends Ball {
         this.maxVelocity = 10;
         this.thresholdVelocity = 0.2f;
         this.position.set(360, 400);
-        this.velocity.set(3 , -5);
+        this.velocity.set(3, -5);
         this.anchor.set(0, 0);
-        this.frameCounter = new FrameCounter(200);
+        this.frameCounter = new FrameCounter(600);
         GameObject.midLayer.add(this);
     }
     public void limitVelocity() {
@@ -63,10 +63,10 @@ public class BallType2 extends Ball {
         GameObject.resolveCollision(Paddle.class, this.getBoxCollider());
         Brick.destroyAllBricks(this.getBoxCollider());
         if (this.frameCounter.count()) {
-            this.destroy();
             BallType1 new_ball = GameObject.recycleGameObject(BallType1.class);
             new_ball.position.set(this.position);
             new_ball.velocity.set(this.velocity);
+            this.destroy();
         }
 
         AbilityBrickType3 ab3 = GameObject.findIntercepts(AbilityBrickType3.class, this.boxCollider);

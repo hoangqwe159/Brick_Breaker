@@ -164,10 +164,10 @@ public class BoxCollider {
                     return otherCenter.subtractThis(this.topLeft.clone().addY(this.height)).setLength(1);
                 }
                 if (otherCenter.x < this.botRight.x) {
-                    if (otherCenter.y <= this.topLeft.y) {
-                        return otherCenter.set(0, -1);
+                    if (otherCenter.y >= this.botRight.y) {
+                        return otherCenter.set(0, 1);
                     }
-                    return otherCenter.set(0, 1);
+                    return otherCenter.set(0, -1);
                 }
                 if (otherCenter.y <= this.topLeft.y) {
                     return otherCenter.subtractThis(this.topLeft.clone().addX(this.width)).setLength(1);
