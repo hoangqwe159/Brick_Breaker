@@ -12,4 +12,9 @@ public class GameOverScene extends Scene{
     public void clear() {
         GameObject.clearAll();
     }
+
+    @Override
+    public void checkBrickLeft() {
+
+    }
 }

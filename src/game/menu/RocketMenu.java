@@ -14,7 +14,7 @@ public class RocketMenu extends GameObject {
     TextRenderer scoreRenderer;
     BufferedImage enemyImage;
     public RocketMenu() {
-        this.scoreRenderer = new TextRenderer(SceneStage1.rocketLeft + ""
+        this.scoreRenderer = new TextRenderer(Scene.currentScene.rocketLeft + ""
                 , Color.white
                 , Setting.FONT_LG);
         this.renderer = this.scoreRenderer;
@@ -26,7 +26,7 @@ public class RocketMenu extends GameObject {
     @Override
     public void run() {
         super.run();
-        this.scoreRenderer.text = SceneStage1.rocketLeft + "";
+        this.scoreRenderer.text = Scene.currentScene.rocketLeft + "";
     }
 
     @Override

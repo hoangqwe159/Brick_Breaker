@@ -9,7 +9,6 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class AnimationRenderer<render> extends Renderer {
-    int currentImageIndex;
     boolean isOnce;
     FrameCounter nextImageCounter;
 
@@ -48,16 +47,6 @@ public class AnimationRenderer<render> extends Renderer {
 
     @Override
     public void render (Graphics g, GameObject master) {
-        BufferedImage currentImage = this.images.get(this.currentImageIndex);
-        g.drawImage(currentImage
-//                , (int) (master.position.x - currentImage.getWidth() * master.anchor.x)
-//                , (int) (master.position.y - currentImage.getHeight() * master.anchor.y)
-                , (int) (master.position.x - currentImage.getWidth() * master.anchor.x)
-                , (int) (master.position.y - currentImage.getHeight() * master.anchor.y)
-                , null);
-
-
-
         if (this.nextImageCounter.count()) {
             this.currentImageIndex++; // Chuyen Anh
             //TODO
@@ -69,7 +58,13 @@ public class AnimationRenderer<render> extends Renderer {
                 this.currentImageIndex = 0;
             this.nextImageCounter.reset();
         }
-
+        BufferedImage currentImage = this.images.get(this.currentImageIndex);
+        g.drawImage(currentImage
+//                , (int) (master.position.x - currentImage.getWidth() * master.anchor.x)
+//                , (int) (master.position.y - currentImage.getHeight() * master.anchor.y)
+                , (int) (master.position.x - currentImage.getWidth() * master.anchor.x)
+                , (int) (master.position.y - currentImage.getHeight() * master.anchor.y)
+                , null);
     }
 
     @Override

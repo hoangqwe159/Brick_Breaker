@@ -10,7 +10,12 @@ public class SceneStage7 extends Scene {
 
     @Override
     public void clear() {
-        GameObject.clearAll();
+//        GameObject.clearAll();
         Scene.signNewScene(new SceneStage8());
+    }
+
+    @Override
+    public void checkBrickLeft() {
+
     }
 }

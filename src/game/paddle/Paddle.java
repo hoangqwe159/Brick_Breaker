@@ -2,6 +2,7 @@ package game.paddle;
 
 import game.*;
 import game.brick.*;
+import game.maps.Map;
 import game.physics.BoxCollider;
 import game.physics.Physics;
 import game.power.Rocket;
@@ -15,11 +16,13 @@ public class Paddle extends GameObject implements Physics {
 
     BoxCollider boxCollider;
     FrameCounter fireCounter;
+    int maxVelocity;
 
     public Paddle() {
         // game.paddle.paddle.playerName; // co the goi y het ben canvas
         super();
-        this.fireCounter = new FrameCounter(60);
+        this.maxVelocity = 7;
+        this.fireCounter = new FrameCounter(0);
         this.createRenderer();
         this.position.set(Setting.PADDLE_START_POSITION_X, Setting.PADDLE_START_POSITION_Y);
         this.anchor.set(0f,0f);
@@ -43,10 +46,10 @@ public class Paddle extends GameObject implements Physics {
 
     public void fire() {
         if (this.fireCounter.count()) {
-            if (SceneStage1.rocketLeft > 0) {
+            if (Scene.currentScene.rocketLeft > 0) {
                 if (GameWindow.isFirePress) {
                     GameObject.recycleGameObject(Rocket.class).position.set(this.position.clone().addThis(this.renderer.getCurrentImageSize().clone().scaleThis(0.5f)));
-                    SceneStage1.rocketLeft -= 1;
+                    Scene.currentScene.rocketLeft -= 1;
                     this.fireCounter.reset();
                 }
             }
@@ -78,15 +81,26 @@ public class Paddle extends GameObject implements Physics {
     }
 
     private void move() {
-        this.velocity.set(0, 0);
+        if (GameWindow.isLeftPress == GameWindow.isRightPress) {
+            this.acceleration.set(0, 0);
+            this.velocity.set(0, 0);
+        }
+        else {
+            if (GameWindow.isLeftPress) {
+                this.acceleration.set(Setting.PADDLE_VECLOCITY_LEFT);
+            }
+            if (GameWindow.isRightPress) {
+                this.acceleration.set(Setting.PADDLE_VECLOCITY_RIGHT);
+            }
+//        this.velocity.setLength(Setting.PADDLE_VECLOCITY_DOWN.y);
+        }
+    }
 
-        if (GameWindow.isLeftPress) {
-            this.velocity.addThis(Setting.PADDLE_VECLOCITY_LEFT);
+    @Override
+    public void limitVelocity() {
+        if (this.velocity.getLength() > this.maxVelocity) {
+            this.velocity.setLength(this.maxVelocity);
         }
-        if (GameWindow.isRightPress) {
-            this.velocity.addThis(Setting.PADDLE_VECLOCITY_RIGHT);
-        }
-        this.velocity.setLength(Setting.PADDLE_VECLOCITY_DOWN.y);
     }
 
     @Override

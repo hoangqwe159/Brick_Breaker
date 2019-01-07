@@ -19,6 +19,6 @@ public class AbilityBrickType9_1 extends AbilityBrick {
 
     @Override
     public void triggerSpecialEffectWhenHit() {
-        SceneStage1.rocketLeft += 3;
+        Scene.currentScene.rocketLeft += 3;
     }
 }

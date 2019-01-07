@@ -14,9 +14,12 @@ import java.util.ArrayList;
 public abstract class Ball extends GameObject implements Physics {
     public BoxCollider boxCollider;
     public int maxVelocity;
+    public int minVelocity;
     public float thresholdVelocity;
 
     public Ball() {
+        this.maxVelocity = 10;
+        this.minVelocity = 4;
         this.createRenderer();
         this.createBoxCollider();
     }
@@ -26,6 +29,32 @@ public abstract class Ball extends GameObject implements Physics {
     public abstract void createRenderer();
 
    // public abstract void hitEnemy();
+
+    @Override
+    public void limitVelocity() {
+        float currentVelocity = this.velocity.getLength();
+        if (currentVelocity > this.maxVelocity) {
+            if (Math.abs(this.velocity.y) < this.thresholdVelocity) {
+                if (this.velocity.y != 0) {
+                    this.velocity.setY(2f * this.maxVelocity * Math.signum(this.velocity.y) * 0.9f);
+                }
+                else {
+                    this.velocity.setY(-2f * this.maxVelocity);
+                }
+            }
+            else if (Math.abs(this.velocity.x) < this.thresholdVelocity) {
+                if (this.velocity.x != 0) {
+                    this.velocity.setX(2f * this.maxVelocity * Math.signum(this.velocity.x) * 0.9f);
+                } else {
+                    this.velocity.setX(2f * this.maxVelocity);
+                }
+            }
+            this.velocity.setLength(this.maxVelocity);
+        }
+        else if (currentVelocity < this.minVelocity) {
+            this.velocity.setLength(this.minVelocity);
+        }
+    }
 
     @Override
     public BoxCollider getBoxCollider() {
@@ -67,14 +96,16 @@ public abstract class Ball extends GameObject implements Physics {
 
     public static void resetBall() {
         if (GameObject.countBall() == 0) {
-            Scene.lives -= 1;
+            if (Scene.lives > 0) {
+                Scene.lives -= 1;
+            }
             if (Scene.lives == 0) {
                 Scene.signNewScene(new GameOverScene());
             }
             else {
                 Paddle paddle = Paddle.getPaddle();
                 BallType1 newBall = GameObject.recycleGameObject(BallType1.class);
-                newBall.position.set(paddle.position.clone().addThis(paddle.renderer.getCurrentImageSize().clone().scaleThis(0.5f).x, 0).subtractThis(newBall.renderer.getCurrentImageSize().x / 2, newBall.renderer.getCurrentImageSize().y));
+                newBall.position.set(paddle.position.clone().addX(paddle.renderer.getCurrentImageSize().clone().scaleThis(0.5f).x).subtractThis(newBall.renderer.getCurrentImageSize().x / 2, newBall.renderer.getCurrentImageSize().y));
                 newBall.velocity.set(0, 0);
                 BallType1.ballIsReset = true;
             }

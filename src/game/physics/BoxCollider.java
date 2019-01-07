@@ -13,6 +13,13 @@ public class BoxCollider {
     float mass;
     float restitutionCoeff;
     float frictionCoeff;
+    Vector2D rayTraceOffset;
+
+    public BoxCollider(Vector2D topLeft, Vector2D botRight) {
+        this.topLeft = topLeft;
+        this.botRight = botRight;
+        this.shape = "rectangle";
+    }
 
     public BoxCollider(GameObject master) {
         this(master, master.renderer.getCurrentImageSize());
@@ -75,6 +82,7 @@ public class BoxCollider {
         this.height = height;
         this.restitutionCoeff = restitutionCoeff;
         this.frictionCoeff = frictionCoeff;
+        this.rayTraceOffset = new Vector2D();
     }
 
     public boolean isColliding(BoxCollider other) {
@@ -113,6 +121,54 @@ public class BoxCollider {
             }
         }
         return other.isColliding(this);
+    }
+
+    public boolean rayTracingCollisionDetect(BoxCollider other) {
+        if (!this.isColliding(other)) {
+            System.out.println("Using raytracing for collision detection");
+            Vector2D relVel = other.velocity.clone().subtractThis(this.velocity);
+            Vector2D norm = this.normal(other);
+            float normVel = relVel.dot(norm);
+            if (this.shape.equals("circle") && (other.shape.equals("circle"))) {
+                float dist = this.topLeft.clone().addThis(this.botRight).getDistTo(other.topLeft.clone().addThis(other.botRight));
+                if (dist < -normVel) {
+                    this.rayTraceOffset.set(norm.scaleThis(2 * (normVel + dist)));
+                    return true;
+                }
+                return false;
+            }
+            if (this.shape.equals("rectangle")) {
+                Vector2D otherCenter = other.topLeft.clone().addThis(other.botRight).scaleThis(0.5f);
+                BoxCollider boundingBox = new BoxCollider(otherCenter, otherCenter.clone().addThis(relVel));
+                if (boundingBox.isColliding(this)) {
+                    if (other.shape.equals("rectangle")) {
+                        System.out.println("Unsupported raytracing shape");
+                        return false;
+                    }
+                    else if (other.shape.equals("circle")) {
+                        Vector2D normToRelVel = new Vector2D(-relVel.y, relVel.x).setLength(1);
+                        Vector2D point1 = otherCenter.clone().addThis(normToRelVel.setLength(other.width));
+                        Vector2D point2 = otherCenter.clone().addThis(normToRelVel.scaleThis(-1));
+                        if (rayTrace(otherCenter, relVel) || rayTrace(point1, relVel) || rayTrace(point2, relVel)) {
+
+                        }
+                    }
+                    return other.rayTracingCollisionDetect(this);
+                }
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean rayTrace(Vector2D rayOrigin, Vector2D ray) {
+        float t1 = (topLeft.x - rayOrigin.x) / ray.x;
+        float t2 = (botRight.x - rayOrigin.x) / ray.x;
+        float t3 = (topLeft.y - rayOrigin.y) / ray.y;
+        float t4 = (botRight.y - rayOrigin.y) / ray.y;
+        float tmin = Math.min(Math.max(t1, t2), Math.max(t3, t4));
+        float tmax = Math.max(Math.min(t1, t2), Math.min(t3, t4));
+        return !(tmax < 0) && !(tmin > tmax);
     }
 
     public void resolveCollision(BoxCollider other) {

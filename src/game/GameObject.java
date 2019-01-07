@@ -3,12 +3,13 @@ import java.awt.*;
 import java.util.ArrayList;
 
 import game.ball.Ball;
-import game.explosion.Particle;
+import game.brick.Brick;
+import game.brick.BrickType2;
 import game.physics.BoxCollider;
 import game.physics.Physics;
 
 import game.renderer.Renderer;
-import tklibs.SpriteUtils;
+import game.scene.Scene;
 import tklibs.Vector2D;
 
 
@@ -24,18 +25,33 @@ public class GameObject {
 
     // E co the la moi thu
     // Nhung muon e ke thua game object
+
     public static <E extends GameObject> E findIntercepts(Class<E> clazz, BoxCollider boxCollider) {
+        return GameObject.findIntercepts(clazz, boxCollider, false);
+    }
+
+    public static <E extends GameObject> E findIntercepts(Class<E> clazz, BoxCollider boxCollider, boolean rayTracing) {
         for (int i = 0; i < gameObjects.size(); i++) {
             GameObject object = gameObjects.get(i);
             // object instanced clazz
             //object instanced physics
             //object active
             //
-            if (object.active
-                    && clazz.isAssignableFrom(object.getClass())
-                    && object instanceof Physics
-                    && ((Physics)object).getBoxCollider().isColliding(boxCollider)) {
-                return (E)object;
+            if (rayTracing) {
+                if (object.active
+                        && clazz.isAssignableFrom(object.getClass())
+                        && object instanceof Physics
+                        && ((Physics)object).getBoxCollider().rayTracingCollisionDetect(boxCollider)) {
+                    return (E)object;
+                }
+            }
+            else {
+                if (object.active
+                        && clazz.isAssignableFrom(object.getClass())
+                        && object instanceof Physics
+                        && ((Physics) object).getBoxCollider().isColliding(boxCollider)) {
+                    return (E) object;
+                }
             }
         }
         return null;
@@ -76,13 +92,15 @@ public class GameObject {
         botLayer.clear();
     }
     public static void runAll() {
-        System.out.println(GameObject.countBall());
+        System.out.println(GameObject.gameObjects.size());
+//        System.out.println(GameObject.countBall());
         for (int i = 0; i < gameObjects.size(); i++) {
             GameObject gameObject = gameObjects.get(i);
             if (gameObject.active) {
                 gameObject.run();
             }
         }
+        Scene.currentScene.checkBrickLeft();
 //        System.out.println(gameObjects.size());
 
     }
@@ -138,16 +156,27 @@ public class GameObject {
         return count;
     }
 
+    public static int countBrick() {
+        int count = 0;
+        for (int i = 0; i < GameObject.gameObjects.size(); i++){
+            GameObject gameObject = GameObject.gameObjects.get(i);
+            if (gameObject.active && gameObject instanceof Brick && !(gameObject instanceof BrickType2)) {
+                count += 1;
+            }
+        }
+        return count;
+    }
+
     public static <E extends GameObject> E resolveCollision(Class<E> clazz, BoxCollider boxCollider) {
-        return GameObject.resolveCollision(clazz, boxCollider, false, true);
+        return GameObject.resolveCollision(clazz, boxCollider, false, true, false);
     }
 
     public static <E extends GameObject> E resolveCollision(Class<E> clazz, BoxCollider boxCollider, boolean destroy) {
-        return GameObject.resolveCollision(clazz, boxCollider, destroy, true);
+        return GameObject.resolveCollision(clazz, boxCollider, destroy, true, false);
     }
 
-    public static <E extends GameObject> E resolveCollision(Class<E> clazz, BoxCollider boxCollider, boolean destroy, boolean trigger) {
-        E object = GameObject.findIntercepts(clazz, boxCollider);
+    public static <E extends GameObject> E resolveCollision(Class<E> clazz, BoxCollider boxCollider, boolean destroy, boolean trigger, boolean rayTracing) {
+        E object = GameObject.findIntercepts(clazz, boxCollider, rayTracing);
         if (object != null) {
             ((Physics) object).getBoxCollider().resolveCollision(boxCollider);
             if (destroy) {
@@ -160,12 +189,16 @@ public class GameObject {
         return object;
     }
 
+    public void limitVelocity() {
+    }
+
     public void run() {
         this.updatePosition();
     }
 
     private void updatePosition() {
         this.updateVelocity();
+        this.limitVelocity();
         this.position.addThis(this.velocity.clone().addThis(this.oldVelocity).scaleThis(0.5f));
     }
 

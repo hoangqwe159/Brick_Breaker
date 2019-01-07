@@ -23,6 +23,7 @@ public class BrickType3 extends Brick {
     @Override
     public void destroy() {
         super.destroy();
-        GameObject.recycleGameObject(AbilityBrickType3.class).position.set(0, 300);
+        AbilityBrickType3 pacman = GameObject.recycleGameObject(AbilityBrickType3.class);
+        pacman.position.set(-this.renderer.getCurrentImageSize().x, this.position.y + 0.5f * (this.renderer.getCurrentImageSize().y - pacman.renderer.getCurrentImageSize().y));
     }
 }

@@ -17,7 +17,7 @@ public class BrickType4 extends Brick {
 
     @Override
     public void createRenderer() {
-        this.renderer = new SingleimageRenderer(SpriteUtils.loadImage("assets/images/enemy/3.png"));
+        this.renderer = new SingleimageRenderer(SpriteUtils.loadImage("assets/images/enemy/4.png"));
     }
 
     @Override

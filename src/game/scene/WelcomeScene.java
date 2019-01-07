@@ -1,8 +1,6 @@
 package game.scene;
 
 import game.GameObject;
-import game.explosion.Particle;
-import tklibs.Vector2D;
 
 public class WelcomeScene extends Scene {
     @Override
@@ -13,5 +11,10 @@ public class WelcomeScene extends Scene {
     @Override
     public void clear() {
         GameObject.clearAll();
+    }
+
+    @Override
+    public void checkBrickLeft() {
+
     }
 }

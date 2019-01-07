@@ -8,41 +8,18 @@ import game.paddle.Paddle;
 import game.renderer.SingleimageRenderer;
 import tklibs.SpriteUtils;
 
+import java.util.Random;
+
 
 public class BallType1 extends Ball {
     public static boolean ballIsReset;
 
     public BallType1() {
-        BallType1.ballIsReset = false;
-        this.maxVelocity = 10;
-        this.thresholdVelocity = 0.2f;
+        this.thresholdVelocity = 0.1f;
         this.position.set(360, 400);
         this.velocity.set(3 , -5);
         this.anchor.set(0, 0);
         GameObject.midLayer.add(this);
-    }
-    public void limitVelocity() {
-        if (this.velocity.getLength() > this.maxVelocity) {
-            if (this.velocity.getLength() > 1.8 * this.maxVelocity) {
-                if (Math.abs(this.velocity.y) < this.thresholdVelocity) {
-                    if (this.velocity.y != 0) {
-                        this.velocity.setY(2f * this.maxVelocity * Math.signum(this.velocity.y) * 0.9f);
-                    }
-                    else {
-                        this.velocity.setY(-2f * this.maxVelocity);
-                    }
-                }
-                else if (Math.abs(this.velocity.x) < this.thresholdVelocity) {
-                    if (this.velocity.x != 0) {
-                        this.velocity.setX(2f * this.maxVelocity * Math.signum(this.velocity.x) * 0.9f);
-                    }
-                    else {
-                        this.velocity.setX(2f * this.maxVelocity);
-                    }
-                }
-            }
-            this.velocity.setLength(this.maxVelocity);
-        }
     }
 
     @Override
@@ -58,10 +35,9 @@ public class BallType1 extends Ball {
     @Override
     public void run() {
         super.run();
-        this.limitVelocity();
         this.launchNewBall();
 
-        GameObject.resolveCollision(Paddle.class, this.getBoxCollider());
+        GameObject.resolveCollision(Paddle.class, this.getBoxCollider(), false, false, true);
         GameObject.resolveCollision(BrickType0_1.class, this.getBoxCollider(), true);
         GameObject.resolveCollision(BrickType0_2.class, this.getBoxCollider(), true);
         GameObject.resolveCollision(BrickType1.class, this.getBoxCollider(), true);
@@ -89,9 +65,14 @@ public class BallType1 extends Ball {
         if (BallType1.ballIsReset) {
             if (GameWindow.isNewBallPress) {
                 BallType1.ballIsReset = false;
-                this.velocity.set(0, -5);
+                for (int i = 0; i < GameObject.gameObjects.size(); i++){
+                    GameObject gameObject = GameObject.gameObjects.get(i);
+                    if (gameObject.active && gameObject instanceof Ball) {
+                        gameObject.velocity.set(0, -5).addThis(Paddle.getPaddle().velocity).addX(new Random().nextFloat());
+                    }
+                }
             }
-            else if (GameWindow.isLeftPress || GameWindow.isRightPress) {
+            else {
                 Paddle paddle = Paddle.getPaddle();
                 this.position.set(paddle.position.clone().addX(paddle.renderer.getCurrentImageSize().x / 2).subtractThis(this.renderer.getCurrentImageSize().x / 2, this.renderer.getCurrentImageSize().y));
             }

@@ -4,7 +4,7 @@ package game.brick;
 import game.FrameCounter;
 import game.GameObject;
 
-import game.explosion.Particle;
+import game.particle.ParticleExplosion;
 import game.power.Rocket;
 import game.physics.BoxCollider;
 import game.physics.Physics;
@@ -53,10 +53,10 @@ public abstract class Brick extends GameObject implements Physics {
     @Override
     public void destroy() {
         super.destroy();
-//        BrickDestroy explosion = GameObject.recycleGameObject(BrickDestroy.class);
-//        explosion.position.set(this.position.clone().addThis(this.renderer.getCurrentImageSize().scaleThis(0.5f)));
+//        BrickDestroy particle = GameObject.recycleGameObject(BrickDestroy.class);
+//        particle.position.set(this.position.clone().addThis(this.renderer.getCurrentImageSize().scaleThis(0.5f)));
         Scene.score += 50;
-        Particle.generateParticle(new Random().nextInt(61) + 70, this.position.clone().subtractThis(this.anchor.clone().scaleThis(this.renderer.getCurrentImageSize())).addThis(this.renderer.getCurrentImageSize().clone().scaleThis(0.5f)));
+        ParticleExplosion.generateParticle(new Random().nextInt(51) + 50, this.position.clone().subtractThis(this.anchor.clone().scaleThis(this.renderer.getCurrentImageSize())).addThis(this.renderer.getCurrentImageSize().clone().scaleThis(0.5f)));
     }
 
     public static void destroyAllBricks(BoxCollider boxCollider) {

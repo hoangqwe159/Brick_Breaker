@@ -15,11 +15,33 @@ public class Layer {
                 int mapData = data.get(titleY * width + titleX);
                 if (mapData != 0) {
                     if (mapData == 1)
-                        BrickSummoner.summonType2(titleX * 40, titleY * 20);
+                        BrickSummoner.summonType0_1(titleX * 40, titleY * 20);
                     else if (mapData == 2)
-                        BrickSummoner.summonType1(titleX * 40, titleY * 20);
+                        BrickSummoner.summonType0_2(titleX * 40, titleY * 20);
                     else if (mapData == 3)
+                        BrickSummoner.summonType1(titleX * 40, titleY * 20);
+                    else if (mapData == 4)
+                        BrickSummoner.summonType2(titleX * 40, titleY * 20);
+                    else if (mapData == 5)
                         BrickSummoner.summonType3(titleX * 40, titleY * 20);
+                    else if (mapData == 6)
+                        BrickSummoner.summonType4(titleX * 40, titleY * 20);
+                    else if (mapData == 7)
+                        BrickSummoner.summonType5_1(titleX * 40, titleY * 20);
+                    else if (mapData == 8)
+                        BrickSummoner.summonType5_2(titleX * 40, titleY * 20);
+                    else if (mapData == 9)
+                        BrickSummoner.summonType6(titleX * 40, titleY * 20);
+                    else if (mapData == 10)
+                        BrickSummoner.summonType7_1(titleX * 40, titleY * 20);
+                    else if (mapData == 11)
+                        BrickSummoner.summonType7_2(titleX * 40, titleY * 20);
+                    else if (mapData == 12)
+                        BrickSummoner.summonType8(titleX * 40, titleY * 20);
+                    else if (mapData == 13)
+                        BrickSummoner.summonType9_1(titleX * 40, titleY * 20);
+                    else if (mapData == 14)
+                        BrickSummoner.summonType9_2(titleX * 40, titleY * 20);
                 }
             }
         }

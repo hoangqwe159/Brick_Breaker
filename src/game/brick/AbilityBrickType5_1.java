@@ -41,6 +41,7 @@ public class AbilityBrickType5_1 extends AbilityBrick {
                     gameObject.renderer.images.add(ImageProcessing.scaleImage(gameObject.renderer.originalImages.get(j), (int)(1.5 * clonedSizes.get(j).x), (int)(1.5 * clonedSizes.get(j).y)));
                     gameObject.renderer.sizes.add(new Vector2D(gameObject.renderer.images.get(j).getWidth(), gameObject.renderer.images.get(j).getHeight()));
                 }
+                gameObject.position.addThis(clonedSizes.get(gameObject.renderer.currentImageIndex).x / 2 - gameObject.renderer.getCurrentImageSize().x / 2, clonedSizes.get(gameObject.renderer.currentImageIndex).y - gameObject.renderer.getCurrentImageSize().y);
             }
         }
     }

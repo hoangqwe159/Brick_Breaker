@@ -121,7 +121,7 @@ public class Vector2D {
     public float getAngle() {
         if (this.x == 0) {
             if (this.y == 0) {
-                return 361;
+                return 0;
             }
             return (float)(Math.PI / 2 - Math.PI * Math.signum(this.y - Math.abs(this.y)));
         }

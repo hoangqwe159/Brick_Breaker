@@ -16,6 +16,7 @@ public class SingleimageRenderer extends Renderer {
         this.images.add(image);
         this.sizes = new ArrayList<>();
         this.sizes.add(new Vector2D(image.getWidth(), image.getHeight()));
+        this.currentImageIndex = 0;
     }
     @Override
     public void render(Graphics g, GameObject master) {
